@@ -1,0 +1,2781 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x3 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_REO_V2))
+waiting for download
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15540
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time May  7 2024 20:15:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2b3a4h (177060) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=0003b3cc vaddr=3ffb0000 size=03dc0h ( 15808) load[0m
+[0;32mI (171) esp_image: segment 2: paddr=0003f194 vaddr=40080000 size=00e84h (  3716) load[0m
+[0;32mI (173) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a1080h (659584) map[0m
+[0;32mI (405) esp_image: segment 4: paddr=000e10a8 vaddr=40080e84 size=18900h (100608) load[0m
+[0;32mI (457) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (457) boot: Disabling RNG early entropy source...[0m
+[0;32mI (469) cpu_start: Multicore app[0m
+[0;32mI (478) cpu_start: Pro cpu start user code[0m
+[0;32mI (478) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (478) cpu_start: Application information:[0m
+[0;32mI (481) cpu_start: Project name:     mqtt-tcp[0m
+[0;32mI (486) cpu_start: App version:      1[0m
+[0;32mI (490) cpu_start: Compile time:     May 18 2024 22:23:22[0m
+[0;32mI (496) cpu_start: ELF file SHA256:  3ee28e200...[0m
+[0;32mI (502) cpu_start: ESP-IDF:          v5.2.1[0m
+[0;32mI (507) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (511) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (516) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (521) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (528) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (534) heap_init: At 3FFB8D20 len 000272E0 (156 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (547) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (553) heap_init: At 40099784 len 0000687C (26 KiB): IRAM[0m
+[0;32mI (561) spi_flash: detected chip: generic[0m
+[0;32mI (564) spi_flash: flash io: dio[0m
+[0;33mW (568) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (581) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (592) main_task: Started on CPU0[0m
+[0;32mI (602) main_task: Calling app_main()[0m
+[0;32mI (602) mqtt-logs: [APP] Startup..[0m
+[0;32mI (602) mqtt-logs: [APP] Free memory: 275504 bytes[0m
+[0;32mI (602) mqtt-logs: [APP] IDF version: v5.2.1[0m
+[0;32mI (632) example_connect: Start example_connect.[0m
+I (642) wifi:wifi driver task: 3ffc0878, prio:23, stack:6656, core=0
+I (642) wifi:wifi firmware version: a9f5b59
+I (642) wifi:wifi certification version: v7.0
+I (642) wifi:config NVS flash: enabled
+I (642) wifi:config nano formating: disabled
+I (652) wifi:Init data frame dynamic rx buffer num: 32
+I (652) wifi:Init static rx mgmt buffer num: 5
+I (652) wifi:Init management short buffer num: 32
+I (662) wifi:Init dynamic tx buffer num: 32
+I (662) wifi:Init static rx buffer size: 1600
+I (672) wifi:Init static rx buffer num: 10
+I (672) wifi:Init dynamic rx buffer num: 32
+[0;32mI (682) wifi_init: rx ba win: 6[0m
+[0;32mI (682) wifi_init: tcpip mbox: 32[0m
+[0;32mI (682) wifi_init: udp mbox: 6[0m
+[0;32mI (692) wifi_init: tcp mbox: 6[0m
+[0;32mI (692) wifi_init: tcp tx win: 5760[0m
+[0;32mI (692) wifi_init: tcp rx win: 5760[0m
+[0;32mI (702) wifi_init: tcp mss: 1440[0m
+[0;32mI (702) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (712) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (712) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+I (812) wifi:mode : sta (c8:f0:9e:7b:77:c4)
+I (812) wifi:enable tsf
+[0;32mI (812) example_connect: Connecting to agua...[0m
+[0;32mI (812) example_connect: Waiting for IP(s)[0m
+I (3232) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1
+I (3482) wifi:state: init -> auth (b0)
+I (3482) wifi:state: auth -> assoc (0)
+I (3492) wifi:state: assoc -> run (10)
+W (3502) wifi:[ADDBA]rx delba, code:39, delete tid:0
+W (3502) wifi:[ADDBA]rx delba, code:39, delete tid:0
+I (3522) wifi:connected with agua, aid = 16, channel 8, BW20, bssid = d8:a0:e8:c3:38:dd
+I (3522) wifi:security: WPA2-PSK, phy: bgn, rssi: -30
+I (3522) wifi:pm start, type: 1
+
+I (3522) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (3602) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4632) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:caf0:9eff:fe7b:77c4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+I (5642) wifi:<ba-add>idx:0 (ifx:0, d8:a0:e8:c3:38:dd), tid:0, ssn:972, winSize:64
+[0;32mI (6532) esp_netif_handlers: example_netif_sta ip: 192.168.1.12, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (6532) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.1.12[0m
+[0;32mI (6542) example_common: Connected to example_netif_sta[0m
+[0;32mI (6542) example_common: - IPv4 address: 192.168.1.12,[0m
+[0;32mI (6552) example_common: - IPv6 address: fe80:0000:0000:0000:caf0:9eff:fe7b:77c4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (6562) ST7789: GPIO_CS=-1[0m
+[0;32mI (6562) ST7789: GPIO_DC=26[0m
+[0;32mI (6572) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6572) ST7789: GPIO_RESET=25[0m
+[0;32mI (6582) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6892) ST7789: GPIO_BL=-1[0m
+[0;32mI (6892) ST7789: GPIO_MOSI=14[0m
+[0;32mI (6892) ST7789: GPIO_SCLK=27[0m
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+[0;32mI (7712) mqtt-logs: Other event id:7[0m
+[0;31mE (7722) rc522: Read/write test failed[0m
+[0;32mI (7732) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+Iniciando keyboard 
+[0;32mI (7732) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7742) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7752) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7762) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7772) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7782) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7792) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7802) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7812) main_task: Returned from app_main()[0m
+[0;31mE (7822) rc522: write: Unknown transport[0m
+[0;31mE (7822) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;32mI (8112) mqtt-logs: MQTT_EVENT_CONNECTED[0m
+[0;32mI (8112) mqtt-logs: se publicó el mensaje, msg_id=15588[0m
+[0;32mI (8122) mqtt-logs: Suscrito correctamente, msg_id=8059[0m
+[0;32mI (8322) mqtt-logs: MQTT_EVENT_PUBLISHED, msg_id=15588[0m
+[0;32mI (8632) mqtt-logs: MQTT_EVENT_SUBSCRIBED, msg_id=8059[0m
+[0;31mE (10822) rc522: write: Unknown transport[0m
+[0;31mE (10822) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (13822) rc522: write: Unknown transport[0m
+[0;31mE (13822) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (16822) rc522: write: Unknown transport[0m
+[0;31mE (16822) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (19822) rc522: write: Unknown transport[0m
+[0;31mE (19822) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (22822) rc522: write: Unknown transport[0m
+[0;31mE (22822) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (25822) rc522: write: Unknown transport[0m
+[0;31mE (25822) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (28822) rc522: write: Unknown transport[0m
+[0;31mE (28822) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x8 (TG1WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15540
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (61) boot: ESP-IDF v5.2.1 2nd stage bootloader[0m
+[0;32mI (61) boot: compile time May  7 2024 20:15:38[0m
+[0;32mI (62) boot: Multicore bootloader[0m
+[0;32mI (66) boot: chip revision: v3.0[0m
+[0;32mI (70) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (75) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (79) boot.esp32: SPI Flash Size : 2MB[0m
+[0;33mW (84) boot.esp32: PRO CPU has been reset by WDT.[0m
+[0;33mW (89) boot.esp32: WDT reset info: PRO CPU PC=0x40081a09[0m
+[0;33mW (95) boot.esp32: WDT reset info: APP CPU PC=0x40081a09[0m
+[0;32mI (101) boot: Enabling RNG early entropy source...[0m
+[0;32mI (107) boot: Partition Table:[0m
+[0;32mI (110) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (118) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (125) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (133) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (141) boot: End of partition table[0m
+[0;32mI (145) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2b3a4h (177060) map[0m
+[0;32mI (214) esp_image: segment 1: paddr=0003b3cc vaddr=3ffb0000 size=03dc0h ( 15808) load[0m
+[0;32mI (220) esp_image: segment 2: paddr=0003f194 vaddr=40080000 size=00e84h (  3716) load[0m
+[0;32mI (222) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a1080h (659584) map[0m
+[0;32mI (454) esp_image: segment 4: paddr=000e10a8 vaddr=40080e84 size=18900h (100608) load[0m
+[0;32mI (506) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (506) boot: Disabling RNG early entropy source...[0m
+[0;32mI (518) cpu_start: Multicore app[0m
+ts Jul당esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2b3a4h (177060) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=0003b3cc vaddr=3ffb0000 size=03dc0h ( 15808) load[0m
+[0;32mI (171) esp_image: segment 2: paddr=0003f194 vaddr=40080000 size=00e84h (  3716) load[0m
+[0;32mI (173) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a1080h (659584) map[0m
+[0;32mI (405) esp_image: segment 4: paddr=000e10a8 vaddr=40080e84 size=18900h (100608) load[0m
+[0;32mI (457) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (457) boot: Disabling RNG early entropy source...[0m
+[0;32mI (469) cpu_start: Multicore app[0m
+[0;32mI (478) cpu_start: Pro cpu start user code[0m
+[0;32mI (478) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (478) cpu_start: Application information:[0m
+[0;32mI (481) cpu_start: Project name:     mqtt-tcp[0m
+[0;32mI (486) cpu_start: App version:      1[0m
+[0;32mI (490) cpu_start: Compile time:     May 18 2024 22:23:22[0m
+[0;32mI (496) cpu_start: ELF file SHA256:  3ee28e200...[0m
+[0;32mI (502) cpu_start: ESP-IDF:          v5.2.1[0m
+[0;32mI (507) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (511) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (516) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (521) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (528) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (534) heap_init: At 3FFB8D20 len 000272E0 (156 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (547) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (553) heap_init: At 40099784 len 0000687C (26 KiB): IRAM[0m
+[0;32mI (561) spi_flash: detected chip: generic[0m
+[0;32mI (564) spi_flash: flash io: dio[0m
+[0;33mW (568) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (581) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (592) main_task: Started on CPU0[0m
+[0;32mI (602) main_task: Calling app_main()[0m
+[0;32mI (602) mqtt-logs: [APP] Startup..[0m
+[0;32mI (602) mqtt-logs: [APP] Free memory: 275504 bytes[0m
+[0;32mI (602) mqtt-logs: [APP] IDF version: v5.2.1[0m
+[0;32mI (632) example_connect: Start example_connect.[0m
+I (642) wifi:wifi driver task: 3ffc0878, prio:23, stack:6656, core=0
+I (642) wifi:wifi firmware version: a9f5b59
+I (642) wifi:wifi certification version: v7.0
+I (642) wifi:config NVS flash: enabled
+I (642) wifi:config nano formating: disabled
+I (652) wifi:Init data frame dynamic rx buffer num: 32
+I (652) wifi:Init static rx mgmt buffer num: 5
+I (652) wifi:Init management short buffer num: 32
+I (662) wifi:Init dynamic tx buffer num: 32
+I (662) wifi:Init static rx buffer size: 1600
+I (672) wifi:Init static rx buffer num: 10
+I (672) wifi:Init dynamic rx buffer num: 32
+[0;32mI (682) wifi_init: rx ba win: 6[0m
+[0;32mI (682) wifi_init: tcpip mbox: 32[0m
+[0;32mI (682) wifi_init: udp mbox: 6[0m
+[0;32mI (692) wifi_init: tcp mbox: 6[0m
+[0;32mI (692) wifi_init: tcp tx win: 5760[0m
+[0;32mI (692) wifi_init: tcp rx win: 5760[0m
+[0;32mI (702) wifi_init: tcp mss: 1440[0m
+[0;32mI (702) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (712) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (712) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+I (812) wifi:mode : sta (c8:f0:9e:7b:77:c4)
+I (812) wifi:enable tsf
+[0;32mI (812) example_connect: Connecting to agua...[0m
+[0;32mI (822) example_connect: Waiting for IP(s)[0m
+I (3232) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1
+I (3482) wifi:state: init -> auth (b0)
+I (3482) wifi:state: auth -> assoc (0)
+I (3492) wifi:state: assoc -> run (10)
+W (3492) wifi:[ADDBA]rx delba, code:39, delete tid:0
+W (3492) wifi:[ADDBA]rx delba, code:39, delete tid:0
+I (3532) wifi:connected with agua, aid = 16, channel 8, BW20, bssid = d8:a0:e8:c3:38:dd
+I (3532) wifi:security: WPA2-PSK, phy: bgn, rssi: -33
+I (3532) wifi:pm start, type: 1
+
+I (3532) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (3542) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4632) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:caf0:9eff:fe7b:77c4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+I (5632) wifi:<ba-add>idx:0 (ifx:0, d8:a0:e8:c3:38:dd), tid:0, ssn:987, winSize:64
+[0;32mI (6542) esp_netif_handlers: example_netif_sta ip: 192.168.1.12, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (6542) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.1.12[0m
+[0;32mI (6552) example_common: Connected to example_netif_sta[0m
+[0;32mI (6552) example_common: - IPv4 address: 192.168.1.12,[0m
+[0;32mI (6562) example_common: - IPv6 address: fe80:0000:0000:0000:caf0:9eff:fe7b:77c4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (6572) ST7789: GPIO_CS=-1[0m
+[0;32mI (6572) ST7789: GPIO_DC=26[0m
+[0;32mI (6582) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6592) ST7789: GPIO_RESET=25[0m
+[0;32mI (6592) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6902) ST7789: GPIO_BL=-1[0m
+[0;32mI (6902) ST7789: GPIO_MOSI=14[0m
+[0;32mI (6902) ST7789: GPIO_SCLK=27[0m
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+[0;32mI (7722) mqtt-logs: Other event id:7[0m
+[0;31mE (7732) rc522: Read/write test failed[0m
+[0;32mI (7732) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+Iniciando keyboard 
+[0;32mI (7742) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7752) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7762) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7772) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7772) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7782) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7792) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7802) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7812) main_task: Returned from app_main()[0m
+[0;31mE (7832) rc522: write: Unknown transport[0m
+[0;31mE (7832) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;32mI (8162) mqtt-logs: MQTT_EVENT_CONNECTED[0m
+[0;32mI (8162) mqtt-logs: se publicó el mensaje, msg_id=333[0m
+[0;32mI (8162) mqtt-logs: Suscrito correctamente, msg_id=18371[0m
+[0;32mI (8372) mqtt-logs: MQTT_EVENT_PUBLISHED, msg_id=333[0m
+[0;32mI (8632) mqtt-logs: MQTT_EVENT_SUBSCRIBED, msg_id=18371[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x400d7daf  PS      : 0x00060030  A0      : 0x800d8176  A1      : 0x3ffcbbe0  
+A2      : 0x3ffca16c  A3      : 0x0000000d  A4      : 0x00000001  A5      : 0x3ffcbc06  
+A6      : 0x00000002  A7      : 0x3ffafddc  A8      : 0xc3e8a0d8  A9      : 0x3ffcbbd0  
+A10     : 0x3ffafddd  A11     : 0x3ffcbc07  A12     : 0x00000001  A13     : 0x3ffafdde  
+A14     : 0x00000007  A15     : 0x00060023  SAR     : 0x00000020  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0xc3e8a0e4  LBEG    : 0x4000c28c  LEND    : 0x4000c296  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x400d7dac:0x3ffcbbe0 0x400d8173:0x3ffcbc00 0x400d8239:0x3ffcbc30 0x400d836b:0x3ffcbc60 0x4008ba19:0x3ffcbc90
+
+
+
+
+ELF file SHA256: 3ee28e200
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15540
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time May  7 2024 20:15:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2b3a4h (177060) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=0003b3cc vaddr=3ffb0000 size=03dc0h ( 15808) load[0m
+[0;32mI (171) esp_image: segment 2: paddr=0003f194 vaddr=40080000 size=00e84h (  3716) load[0m
+[0;32mI (173) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a1080h (659584) map[0m
+[0;32mI (405) esp_image: segment 4: paddr=000e10a8 vaddr=40080e84 size=18900h (100608) load[0m
+[0;32mI (457) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (457) boot: Disabling RNG early entropy source...[0m
+[0;32mI (469) cpu_start: Multicore app[0m
+[0;32mI (478) cpu_start: Pro cpu start user code[0m
+[0;32mI (478) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (478) cpu_start: Application information:[0m
+[0;32mI (481) cpu_start: Project name:     mqtt-tcp[0m
+[0;32mI (486) cpu_start: App version:      1[0m
+[0;32mI (490) cpu_start: Compile time:     May 18 2024 22:23:22[0m
+[0;32mI (496) cpu_start: ELF file SHA256:  3ee28e200...[0m
+[0;32mI (502) cpu_start: ESP-IDF:          v5.2.1[0m
+[0;32mI (507) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (511) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (516) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (521) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (528) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (534) heap_init: At 3FFB8D20 len 000272E0 (156 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (547) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (553) heap_init: At 40099784 len 0000687C (26 KiB): IRAM[0m
+[0;32mI (561) spi_flash: detected chip: generic[0m
+[0;32mI (564) spi_flash: flash io: dio[0m
+[0;33mW (568) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (581) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (592) main_task: Started on CPU0[0m
+[0;32mI (602) main_task: Calling app_main()[0m
+[0;32mI (602) mqtt-logs: [APP] Startup..[0m
+[0;32mI (602) mqtt-logs: [APP] Free memory: 275504 bytes[0m
+[0;32mI (602) mqtt-logs: [APP] IDF version: v5.2.1[0m
+[0;32mI (632) example_connect: Start example_connect.[0m
+I (642) wifi:wifi driver task: 3ffc0878, prio:23, stack:6656, core=0
+I (642) wifi:wifi firmware version: a9f5b59
+I (642) wifi:wifi certification version: v7.0
+I (642) wifi:config NVS flash: enabled
+I (642) wifi:config nano formating: disabled
+I (652) wifi:Init data frame dynamic rx buffer num: 32
+I (652) wifi:Init static rx mgmt buffer num: 5
+I (652) wifi:Init management short buffer num: 32
+I (662) wifi:Init dynamic tx buffer num: 32
+I (662) wifi:Init static rx buffer size: 1600
+I (672) wifi:Init static rx buffer num: 10
+I (672) wifi:Init dynamic rx buffer num: 32
+[0;32mI (682) wifi_init: rx ba win: 6[0m
+[0;32mI (682) wifi_init: tcpip mbox: 32[0m
+[0;32mI (682) wifi_init: udp mbox: 6[0m
+[0;32mI (692) wifi_init: tcp mbox: 6[0m
+[0;32mI (692) wifi_init: tcp tx win: 5760[0m
+[0;32mI (692) wifi_init: tcp rx win: 5760[0m
+[0;32mI (702) wifi_init: tcp mss: 1440[0m
+[0;32mI (702) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (712) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (712) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+I (812) wifi:mode : sta (c8:f0:9e:7b:77:c4)
+I (812) wifi:enable tsf
+[0;32mI (812) example_connect: Connecting to agua...[0m
+[0;32mI (822) example_connect: Waiting for IP(s)[0m
+I (3232) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1
+I (3482) wifi:state: init -> auth (b0)
+I (3482) wifi:state: auth -> assoc (0)
+I (3492) wifi:state: assoc -> run (10)
+W (3502) wifi:[ADDBA]rx delba, code:39, delete tid:0
+W (3502) wifi:[ADDBA]rx delba, code:39, delete tid:0
+I (3512) wifi:connected with agua, aid = 16, channel 8, BW20, bssid = d8:a0:e8:c3:38:dd
+I (3512) wifi:security: WPA2-PSK, phy: bgn, rssi: -34
+I (3522) wifi:pm start, type: 1
+
+I (3522) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (3592) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4632) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:caf0:9eff:fe7b:77c4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+I (5632) wifi:<ba-add>idx:0 (ifx:0, d8:a0:e8:c3:38:dd), tid:0, ssn:1005, winSize:64
+[0;32mI (6532) esp_netif_handlers: example_netif_sta ip: 192.168.1.12, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (6532) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.1.12[0m
+[0;32mI (6542) example_common: Connected to example_netif_sta[0m
+[0;32mI (6542) example_common: - IPv4 address: 192.168.1.12,[0m
+[0;32mI (6552) example_common: - IPv6 address: fe80:0000:0000:0000:caf0:9eff:fe7b:77c4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (6562) ST7789: GPIO_CS=-1[0m
+[0;32mI (6562) ST7789: GPIO_DC=26[0m
+[0;32mI (6572) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6582) ST7789: GPIO_RESET=25[0m
+[0;32mI (6582) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6892) ST7789: GPIO_BL=-1[0m
+[0;32mI (6892) ST7789: GPIO_MOSI=14[0m
+[0;32mI (6892) ST7789: GPIO_SCLK=27[0m
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+[0;32mI (7712) mqtt-logs: Other event id:7[0m
+[0;31mE (7722) rc522: Read/write test failed[0m
+[0;32mI (7722) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+Iniciando keyboard 
+[0;32mI (7732) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7742) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7752) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7752) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7762) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7772) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7782) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7792) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7802) main_task: Returned from app_main()[0m
+[0;31mE (7822) rc522: write: Unknown transport[0m
+[0;31mE (7822) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;32mI (8112) mqtt-logs: MQTT_EVENT_CONNECTED[0m
+[0;32mI (8112) mqtt-logs: se publicó el mensaje, msg_id=23042[0m
+[0;32mI (8122) mqtt-logs: Suscrito correctamente, msg_id=10735[0m
+[0;32mI (8312) mqtt-logs: MQTT_EVENT_PUBLISHED, msg_id=23042[0m
+[0;32mI (8632) mqtt-logs: MQTT_EVENT_SUBSCRIBED, msg_id=10735[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x400d7daf  PS      : 0x00060830  A0      : 0x800d8176  A1      : 0x3ffcbbd0  
+A2      : 0x3ffca16c  A3      : 0x0000000d  A4      : 0x00000001  A5      : 0x3ffcbbf6  
+A6      : 0x00000002  A7      : 0x3ffafddc  A8      : 0xbeef0000  A9      : 0x3ffcbbc0  
+A10     : 0x3ffafddd  A11     : 0x3ffcbbf7  A12     : 0x00000001  A13     : 0x3ffafdde  
+A14     : 0x00000007  A15     : 0x00060023  SAR     : 0x00000020  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0xbeef000c  LBEG    : 0x4000c28c  LEND    : 0x4000c296  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x400d7dac:0x3ffcbbd0 0x400d8173:0x3ffcbbf0 0x400d8239:0x3ffcbc20 0x400d836b:0x3ffcbc50 0x4008ba19:0x3ffcbc80
+
+
+
+
+ELF file SHA256: 3ee28e200
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15540
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time May  7 2024 20:15:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2b3a4h (177060) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=0003b3cc vaddr=3ffb0000 size=03dc0h ( 15808) load[0m
+[0;32mI (171) esp_image: segment 2: paddr=0003f194 vaddr=40080000 size=00e84h (  3716) load[0m
+[0;32mI (173) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a1080h (659584) map[0m
+[0;32mI (405) esp_image: segment 4: paddr=000e10a8 vaddr=40080e84 size=18900h (100608) load[0m
+[0;32mI (457) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (457) boot: Disabling RNG early entropy source...[0m
+[0;32mI (469) cpu_start: Multicore app[0m
+[0;32mI (478) cpu_start: Pro cpu start user code[0m
+[0;32mI (478) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (478) cpu_start: Application information:[0m
+[0;32mI (481) cpu_start: Project name:     mqtt-tcp[0m
+[0;32mI (486) cpu_start: App version:      1[0m
+[0;32mI (490) cpu_start: Compile time:     May 18 2024 22:23:22[0m
+[0;32mI (496) cpu_start: ELF file SHA256:  3ee28e200...[0m
+[0;32mI (502) cpu_start: ESP-IDF:          v5.2.1[0m
+[0;32mI (507) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (511) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (516) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (521) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (528) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (534) heap_init: At 3FFB8D20 len 000272E0 (156 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (547) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (553) heap_init: At 40099784 len 0000687C (26 KiB): IRAM[0m
+[0;32mI (561) spi_flash: detected chip: generic[0m
+[0;32mI (564) spi_flash: flash io: dio[0m
+[0;33mW (568) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (581) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (592) main_task: Started on CPU0[0m
+[0;32mI (602) main_task: Calling app_main()[0m
+[0;32mI (602) mqtt-logs: [APP] Startup..[0m
+[0;32mI (602) mqtt-logs: [APP] Free memory: 275504 bytes[0m
+[0;32mI (602) mqtt-logs: [APP] IDF version: v5.2.1[0m
+[0;32mI (632) example_connect: Start example_connect.[0m
+I (642) wifi:wifi driver task: 3ffc0878, prio:23, stack:6656, core=0
+I (642) wifi:wifi firmware version: a9f5b59
+I (642) wifi:wifi certification version: v7.0
+I (642) wifi:config NVS flash: enabled
+I (642) wifi:config nano formating: disabled
+I (652) wifi:Init data frame dynamic rx buffer num: 32
+I (652) wifi:Init static rx mgmt buffer num: 5
+I (652) wifi:Init management short buffer num: 32
+I (662) wifi:Init dynamic tx buffer num: 32
+I (662) wifi:Init static rx buffer size: 1600
+I (672) wifi:Init static rx buffer num: 10
+I (672) wifi:Init dynamic rx buffer num: 32
+[0;32mI (682) wifi_init: rx ba win: 6[0m
+[0;32mI (682) wifi_init: tcpip mbox: 32[0m
+[0;32mI (682) wifi_init: udp mbox: 6[0m
+[0;32mI (692) wifi_init: tcp mbox: 6[0m
+[0;32mI (692) wifi_init: tcp tx win: 5760[0m
+[0;32mI (692) wifi_init: tcp rx win: 5760[0m
+[0;32mI (702) wifi_init: tcp mss: 1440[0m
+[0;32mI (702) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (712) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (712) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+I (812) wifi:mode : sta (c8:f0:9e:7b:77:c4)
+I (812) wifi:enable tsf
+[0;32mI (812) example_connect: Connecting to agua...[0m
+[0;32mI (822) example_connect: Waiting for IP(s)[0m
+I (3232) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1
+I (3482) wifi:state: init -> auth (b0)
+I (3492) wifi:state: auth -> assoc (0)
+I (3502) wifi:state: assoc -> run (10)
+W (3502) wifi:[ADDBA]rx delba, code:39, delete tid:0
+W (3502) wifi:[ADDBA]rx delba, code:39, delete tid:0
+I (3532) wifi:connected with agua, aid = 16, channel 8, BW20, bssid = d8:a0:e8:c3:38:dd
+I (3532) wifi:security: WPA2-PSK, phy: bgn, rssi: -33
+I (3532) wifi:pm start, type: 1
+
+I (3532) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (3552) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4632) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:caf0:9eff:fe7b:77c4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+I (5632) wifi:<ba-add>idx:0 (ifx:0, d8:a0:e8:c3:38:dd), tid:0, ssn:1023, winSize:64
+[0;32mI (6542) esp_netif_handlers: example_netif_sta ip: 192.168.1.12, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (6542) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.1.12[0m
+[0;32mI (6552) example_common: Connected to example_netif_sta[0m
+[0;32mI (6552) example_common: - IPv4 address: 192.168.1.12,[0m
+[0;32mI (6562) example_common: - IPv6 address: fe80:0000:0000:0000:caf0:9eff:fe7b:77c4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (6572) ST7789: GPIO_CS=-1[0m
+[0;32mI (6572) ST7789: GPIO_DC=26[0m
+[0;32mI (6582) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6592) ST7789: GPIO_RESET=25[0m
+[0;32mI (6592) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (6902) ST7789: GPIO_BL=-1[0m
+[0;32mI (6902) ST7789: GPIO_MOSI=14[0m
+[0;32mI (6902) ST7789: GPIO_SCLK=27[0m
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+Fontx:/spiffs/ILGH32XB.FNT not found.
+Fontx: not found.
+[0;32mI (7722) mqtt-logs: Other event id:7[0m
+[0;31mE (7732) rc522: Read/write test failed[0m
+[0;32mI (7742) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+Iniciando keyboard 
+[0;32mI (7742) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7752) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7762) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7772) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (7772) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7782) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7792) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7802) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (7812) main_task: Returned from app_main()[0m
+[0;31mE (7832) rc522: write: Unknown transport[0m
+[0;31mE (7832) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;32mI (8172) mqtt-logs: MQTT_EVENT_CONNECTED[0m
+[0;32mI (8172) mqtt-logs: se publicó el mensaje, msg_id=40598[0m
+[0;32mI (8172) mqtt-logs: Suscrito correctamente, msg_id=27897[0m
+[0;32mI (8372) mqtt-logs: MQTT_EVENT_PUBLISHED, msg_id=40598[0m
+[0;32mI (8632) mqtt-logs: MQTT_EVENT_SUBSCRIBED, msg_id=27897[0m
+[0;31mE (129532) rc522: write: Unknown transport[0m
+[0;31mE (129532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (132532) rc522: write: Unknown transport[0m
+[0;31mE (132532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (135532) rc522: write: Unknown transport[0m
+[0;31mE (135532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (138532) rc522: write: Unknown transport[0m
+[0;31mE (138532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (141532) rc522: write: Unknown transport[0m
+[0;31mE (141532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (144532) rc522: write: Unknown transport[0m
+[0;31mE (144532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (147532) rc522: write: Unknown transport[0m
+[0;31mE (147532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (150532) rc522: write: Unknown transport[0m
+[0;31mE (150532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (153532) rc522: write: Unknown transport[0m
+[0;31mE (153532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (156532) rc522: write: Unknown transport[0m
+[0;31mE (156532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (159532) rc522: write: Unknown transport[0m
+[0;31mE (159532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (162532) rc522: write: Unknown transport[0m
+[0;31mE (162532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (165532) rc522: write: Unknown transport[0m
+[0;31mE (165532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (168532) rc522: write: Unknown transport[0m
+[0;31mE (168532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (171532) rc522: write: Unknown transport[0m
+[0;31mE (171532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (174532) rc522: write: Unknown transport[0m
+[0;31mE (174532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (177532) rc522: write: Unknown transport[0m
+[0;31mE (177532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (180532) rc522: write: Unknown transport[0m
+[0;31mE (180532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (183532) rc522: write: Unknown transport[0m
+[0;31mE (183532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (186532) rc522: write: Unknown transport[0m
+[0;31mE (186532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (189532) rc522: write: Unknown transport[0m
+[0;31mE (189532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (192532) rc522: write: Unknown transport[0m
+[0;31mE (192532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (195532) rc522: write: Unknown transport[0m
+[0;31mE (195532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (198532) rc522: write: Unknown transport[0m
+[0;31mE (198532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (201532) rc522: write: Unknown transport[0m
+[0;31mE (201532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (204532) rc522: write: Unknown transport[0m
+[0;31mE (204532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (207532) rc522: write: Unknown transport[0m
+[0;31mE (207532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (210532) rc522: write: Unknown transport[0m
+[0;31mE (210532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (213532) rc522: write: Unknown transport[0m
+[0;31mE (213532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (216532) rc522: write: Unknown transport[0m
+[0;31mE (216532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (219532) rc522: write: Unknown transport[0m
+[0;31mE (219532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (222532) rc522: write: Unknown transport[0m
+[0;31mE (222532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (225532) rc522: write: Unknown transport[0m
+[0;31mE (225532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (228532) rc522: write: Unknown transport[0m
+[0;31mE (228532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (231532) rc522: write: Unknown transport[0m
+[0;31mE (231532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (234532) rc522: write: Unknown transport[0m
+[0;31mE (234532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (237532) rc522: write: Unknown transport[0m
+[0;31mE (237532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (240532) rc522: write: Unknown transport[0m
+[0;31mE (240532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (243532) rc522: write: Unknown transport[0m
+[0;31mE (243532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (246532) rc522: write: Unknown transport[0m
+[0;31mE (246532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (249532) rc522: write: Unknown transport[0m
+[0;31mE (249532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (252532) rc522: write: Unknown transport[0m
+[0;31mE (252532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (255532) rc522: write: Unknown transport[0m
+[0;31mE (255532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (258532) rc522: write: Unknown transport[0m
+[0;31mE (258532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (261532) rc522: write: Unknown transport[0m
+[0;31mE (261532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (264532) rc522: write: Unknown transport[0m
+[0;31mE (264532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (267532) rc522: write: Unknown transport[0m
+[0;31mE (267532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (270532) rc522: write: Unknown transport[0m
+[0;31mE (270532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (273532) rc522: write: Unknown transport[0m
+[0;31mE (273532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (276532) rc522: write: Unknown transport[0m
+[0;31mE (276532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (279532) rc522: write: Unknown transport[0m
+[0;31mE (279532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (282532) rc522: write: Unknown transport[0m
+[0;31mE (282532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (285532) rc522: write: Unknown transport[0m
+[0;31mE (285532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (288532) rc522: write: Unknown transport[0m
+[0;31mE (288532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (291532) rc522: write: Unknown transport[0m
+[0;31mE (291532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (294532) rc522: write: Unknown transport[0m
+[0;31mE (294532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (297532) rc522: write: Unknown transport[0m
+[0;31mE (297532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (300532) rc522: write: Unknown transport[0m
+[0;31mE (300532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (303532) rc522: write: Unknown transport[0m
+[0;31mE (303532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (306532) rc522: write: Unknown transport[0m
+[0;31mE (306532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (309532) rc522: write: Unknown transport[0m
+[0;31mE (309532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (312532) rc522: write: Unknown transport[0m
+[0;31mE (312532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (315532) rc522: write: Unknown transport[0m
+[0;31mE (315532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (318532) rc522: write: Unknown transport[0m
+[0;31mE (318532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (321532) rc522: write: Unknown transport[0m
+[0;31mE (321532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (324532) rc522: write: Unknown transport[0m
+[0;31mE (324532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (327532) rc522: write: Unknown transport[0m
+[0;31mE (327532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (330532) rc522: write: Unknown transport[0m
+[0;31mE (330532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (333532) rc522: write: Unknown transport[0m
+[0;31mE (333532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (336532) rc522: write: Unknown transport[0m
+[0;31mE (336532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (339532) rc522: write: Unknown transport[0m
+[0;31mE (339532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (342532) rc522: write: Unknown transport[0m
+[0;31mE (342532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (345532) rc522: write: Unknown transport[0m
+[0;31mE (345532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (348532) rc522: write: Unknown transport[0m
+[0;31mE (348532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (351532) rc522: write: Unknown transport[0m
+[0;31mE (351532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (354532) rc522: write: Unknown transport[0m
+[0;31mE (354532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (357532) rc522: write: Unknown transport[0m
+[0;31mE (357532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (360532) rc522: write: Unknown transport[0m
+[0;31mE (360532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (363532) rc522: write: Unknown transport[0m
+[0;31mE (363532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (366532) rc522: write: Unknown transport[0m
+[0;31mE (366532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (369532) rc522: write: Unknown transport[0m
+[0;31mE (369532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (372532) rc522: write: Unknown transport[0m
+[0;31mE (372532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (375532) rc522: write: Unknown transport[0m
+[0;31mE (375532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (378532) rc522: write: Unknown transport[0m
+[0;31mE (378532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (381532) rc522: write: Unknown transport[0m
+[0;31mE (381532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (384532) rc522: write: Unknown transport[0m
+[0;31mE (384532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (387532) rc522: write: Unknown transport[0m
+[0;31mE (387532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (390532) rc522: write: Unknown transport[0m
+[0;31mE (390532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (393532) rc522: write: Unknown transport[0m
+[0;31mE (393532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (396532) rc522: write: Unknown transport[0m
+[0;31mE (396532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (399532) rc522: write: Unknown transport[0m
+[0;31mE (399532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (402532) rc522: write: Unknown transport[0m
+[0;31mE (402532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (405532) rc522: write: Unknown transport[0m
+[0;31mE (405532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (408532) rc522: write: Unknown transport[0m
+[0;31mE (408532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (411532) rc522: write: Unknown transport[0m
+[0;31mE (411532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (414532) rc522: write: Unknown transport[0m
+[0;31mE (414532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (417532) rc522: write: Unknown transport[0m
+[0;31mE (417532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (420532) rc522: write: Unknown transport[0m
+[0;31mE (420532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (423532) rc522: write: Unknown transport[0m
+[0;31mE (423532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (426532) rc522: write: Unknown transport[0m
+[0;31mE (426532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (429532) rc522: write: Unknown transport[0m
+[0;31mE (429532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (432532) rc522: write: Unknown transport[0m
+[0;31mE (432532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (435532) rc522: write: Unknown transport[0m
+[0;31mE (435532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (438532) rc522: write: Unknown transport[0m
+[0;31mE (438532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (441532) rc522: write: Unknown transport[0m
+[0;31mE (441532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (444532) rc522: write: Unknown transport[0m
+[0;31mE (444532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (447532) rc522: write: Unknown transport[0m
+[0;31mE (447532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (450532) rc522: write: Unknown transport[0m
+[0;31mE (450532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (453532) rc522: write: Unknown transport[0m
+[0;31mE (453532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (456532) rc522: write: Unknown transport[0m
+[0;31mE (456532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (459532) rc522: write: Unknown transport[0m
+[0;31mE (459532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (462532) rc522: write: Unknown transport[0m
+[0;31mE (462532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (465532) rc522: write: Unknown transport[0m
+[0;31mE (465532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (468532) rc522: write: Unknown transport[0m
+[0;31mE (468532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (471532) rc522: write: Unknown transport[0m
+[0;31mE (471532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (474532) rc522: write: Unknown transport[0m
+[0;31mE (474532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (477532) rc522: write: Unknown transport[0m
+[0;31mE (477532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (480532) rc522: write: Unknown transport[0m
+[0;31mE (480532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (483532) rc522: write: Unknown transport[0m
+[0;31mE (483532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (486532) rc522: write: Unknown transport[0m
+[0;31mE (486532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (489532) rc522: write: Unknown transport[0m
+[0;31mE (489532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (492532) rc522: write: Unknown transport[0m
+[0;31mE (492532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (495532) rc522: write: Unknown transport[0m
+[0;31mE (495532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (498532) rc522: write: Unknown transport[0m
+[0;31mE (498532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (501532) rc522: write: Unknown transport[0m
+[0;31mE (501532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (504532) rc522: write: Unknown transport[0m
+[0;31mE (504532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (507532) rc522: write: Unknown transport[0m
+[0;31mE (507532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (510532) rc522: write: Unknown transport[0m
+[0;31mE (510532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (513532) rc522: write: Unknown transport[0m
+[0;31mE (513532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (516532) rc522: write: Unknown transport[0m
+[0;31mE (516532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (519532) rc522: write: Unknown transport[0m
+[0;31mE (519532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (522532) rc522: write: Unknown transport[0m
+[0;31mE (522532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (525532) rc522: write: Unknown transport[0m
+[0;31mE (525532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (528532) rc522: write: Unknown transport[0m
+[0;31mE (528532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (531532) rc522: write: Unknown transport[0m
+[0;31mE (531532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (534532) rc522: write: Unknown transport[0m
+[0;31mE (534532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (537532) rc522: write: Unknown transport[0m
+[0;31mE (537532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (540532) rc522: write: Unknown transport[0m
+[0;31mE (540532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (543532) rc522: write: Unknown transport[0m
+[0;31mE (543532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (546532) rc522: write: Unknown transport[0m
+[0;31mE (546532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (549532) rc522: write: Unknown transport[0m
+[0;31mE (549532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (552532) rc522: write: Unknown transport[0m
+[0;31mE (552532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (555532) rc522: write: Unknown transport[0m
+[0;31mE (555532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (558532) rc522: write: Unknown transport[0m
+[0;31mE (558532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (561532) rc522: write: Unknown transport[0m
+[0;31mE (561532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (564532) rc522: write: Unknown transport[0m
+[0;31mE (564532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (567532) rc522: write: Unknown transport[0m
+[0;31mE (567532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (570532) rc522: write: Unknown transport[0m
+[0;31mE (570532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (573532) rc522: write: Unknown transport[0m
+[0;31mE (573532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (576532) rc522: write: Unknown transport[0m
+[0;31mE (576532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (579532) rc522: write: Unknown transport[0m
+[0;31mE (579532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (582532) rc522: write: Unknown transport[0m
+[0;31mE (582532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (585532) rc522: write: Unknown transport[0m
+[0;31mE (585532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (588532) rc522: write: Unknown transport[0m
+[0;31mE (588532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (591532) rc522: write: Unknown transport[0m
+[0;31mE (591532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (594532) rc522: write: Unknown transport[0m
+[0;31mE (594532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (597532) rc522: write: Unknown transport[0m
+[0;31mE (597532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (600532) rc522: write: Unknown transport[0m
+[0;31mE (600532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (603532) rc522: write: Unknown transport[0m
+[0;31mE (603532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (606532) rc522: write: Unknown transport[0m
+[0;31mE (606532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (609532) rc522: write: Unknown transport[0m
+[0;31mE (609532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (612532) rc522: write: Unknown transport[0m
+[0;31mE (612532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (615532) rc522: write: Unknown transport[0m
+[0;31mE (615532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (618532) rc522: write: Unknown transport[0m
+[0;31mE (618532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (621532) rc522: write: Unknown transport[0m
+[0;31mE (621532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (624532) rc522: write: Unknown transport[0m
+[0;31mE (624532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (627532) rc522: write: Unknown transport[0m
+[0;31mE (627532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (630532) rc522: write: Unknown transport[0m
+[0;31mE (630532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (633532) rc522: write: Unknown transport[0m
+[0;31mE (633532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (636532) rc522: write: Unknown transport[0m
+[0;31mE (636532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (639532) rc522: write: Unknown transport[0m
+[0;31mE (639532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (642532) rc522: write: Unknown transport[0m
+[0;31mE (642532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (645532) rc522: write: Unknown transport[0m
+[0;31mE (645532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (648532) rc522: write: Unknown transport[0m
+[0;31mE (648532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (651532) rc522: write: Unknown transport[0m
+[0;31mE (651532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (654532) rc522: write: Unknown transport[0m
+[0;31mE (654532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (657532) rc522: write: Unknown transport[0m
+[0;31mE (657532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (660532) rc522: write: Unknown transport[0m
+[0;31mE (660532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (663532) rc522: write: Unknown transport[0m
+[0;31mE (663532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (666532) rc522: write: Unknown transport[0m
+[0;31mE (666532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (669532) rc522: write: Unknown transport[0m
+[0;31mE (669532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (672532) rc522: write: Unknown transport[0m
+[0;31mE (672532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (675532) rc522: write: Unknown transport[0m
+[0;31mE (675532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (678532) rc522: write: Unknown transport[0m
+[0;31mE (678532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (681532) rc522: write: Unknown transport[0m
+[0;31mE (681532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (684532) rc522: write: Unknown transport[0m
+[0;31mE (684532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (687532) rc522: write: Unknown transport[0m
+[0;31mE (687532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (690532) rc522: write: Unknown transport[0m
+[0;31mE (690532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (693532) rc522: write: Unknown transport[0m
+[0;31mE (693532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (696532) rc522: write: Unknown transport[0m
+[0;31mE (696532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (699532) rc522: write: Unknown transport[0m
+[0;31mE (699532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (702532) rc522: write: Unknown transport[0m
+[0;31mE (702532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (705532) rc522: write: Unknown transport[0m
+[0;31mE (705532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (708532) rc522: write: Unknown transport[0m
+[0;31mE (708532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (711532) rc522: write: Unknown transport[0m
+[0;31mE (711532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (714532) rc522: write: Unknown transport[0m
+[0;31mE (714532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (717532) rc522: write: Unknown transport[0m
+[0;31mE (717532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (720532) rc522: write: Unknown transport[0m
+[0;31mE (720532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (723532) rc522: write: Unknown transport[0m
+[0;31mE (723532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (726532) rc522: write: Unknown transport[0m
+[0;31mE (726532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (729532) rc522: write: Unknown transport[0m
+[0;31mE (729532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (732532) rc522: write: Unknown transport[0m
+[0;31mE (732532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (735532) rc522: write: Unknown transport[0m
+[0;31mE (735532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (738532) rc522: write: Unknown transport[0m
+[0;31mE (738532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (741532) rc522: write: Unknown transport[0m
+[0;31mE (741532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (744532) rc522: write: Unknown transport[0m
+[0;31mE (744532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (747532) rc522: write: Unknown transport[0m
+[0;31mE (747532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (750532) rc522: write: Unknown transport[0m
+[0;31mE (750532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (753532) rc522: write: Unknown transport[0m
+[0;31mE (753532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (756532) rc522: write: Unknown transport[0m
+[0;31mE (756532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (759532) rc522: write: Unknown transport[0m
+[0;31mE (759532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (762532) rc522: write: Unknown transport[0m
+[0;31mE (762532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (765532) rc522: write: Unknown transport[0m
+[0;31mE (765532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (768532) rc522: write: Unknown transport[0m
+[0;31mE (768532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (771532) rc522: write: Unknown transport[0m
+[0;31mE (771532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (774532) rc522: write: Unknown transport[0m
+[0;31mE (774532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (777532) rc522: write: Unknown transport[0m
+[0;31mE (777532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (780532) rc522: write: Unknown transport[0m
+[0;31mE (780532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (783532) rc522: write: Unknown transport[0m
+[0;31mE (783532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (786532) rc522: write: Unknown transport[0m
+[0;31mE (786532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (789532) rc522: write: Unknown transport[0m
+[0;31mE (789532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (792532) rc522: write: Unknown transport[0m
+[0;31mE (792532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (795532) rc522: write: Unknown transport[0m
+[0;31mE (795532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (798532) rc522: write: Unknown transport[0m
+[0;31mE (798532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (801532) rc522: write: Unknown transport[0m
+[0;31mE (801532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (804532) rc522: write: Unknown transport[0m
+[0;31mE (804532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (807532) rc522: write: Unknown transport[0m
+[0;31mE (807532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (810532) rc522: write: Unknown transport[0m
+[0;31mE (810532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (813532) rc522: write: Unknown transport[0m
+[0;31mE (813532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (816532) rc522: write: Unknown transport[0m
+[0;31mE (816532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (819532) rc522: write: Unknown transport[0m
+[0;31mE (819532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (822532) rc522: write: Unknown transport[0m
+[0;31mE (822532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (825532) rc522: write: Unknown transport[0m
+[0;31mE (825532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (828532) rc522: write: Unknown transport[0m
+[0;31mE (828532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (831532) rc522: write: Unknown transport[0m
+[0;31mE (831532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (834532) rc522: write: Unknown transport[0m
+[0;31mE (834532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (837532) rc522: write: Unknown transport[0m
+[0;31mE (837532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (840532) rc522: write: Unknown transport[0m
+[0;31mE (840532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (843532) rc522: write: Unknown transport[0m
+[0;31mE (843532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (846532) rc522: write: Unknown transport[0m
+[0;31mE (846532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (849532) rc522: write: Unknown transport[0m
+[0;31mE (849532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (852532) rc522: write: Unknown transport[0m
+[0;31mE (852532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (855532) rc522: write: Unknown transport[0m
+[0;31mE (855532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (858532) rc522: write: Unknown transport[0m
+[0;31mE (858532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (861532) rc522: write: Unknown transport[0m
+[0;31mE (861532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (864532) rc522: write: Unknown transport[0m
+[0;31mE (864532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (867532) rc522: write: Unknown transport[0m
+[0;31mE (867532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (870532) rc522: write: Unknown transport[0m
+[0;31mE (870532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (873532) rc522: write: Unknown transport[0m
+[0;31mE (873532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (876532) rc522: write: Unknown transport[0m
+[0;31mE (876532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (879532) rc522: write: Unknown transport[0m
+[0;31mE (879532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (882532) rc522: write: Unknown transport[0m
+[0;31mE (882532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (885532) rc522: write: Unknown transport[0m
+[0;31mE (885532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (888532) rc522: write: Unknown transport[0m
+[0;31mE (888532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (891532) rc522: write: Unknown transport[0m
+[0;31mE (891532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (894532) rc522: write: Unknown transport[0m
+[0;31mE (894532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (897532) rc522: write: Unknown transport[0m
+[0;31mE (897532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (900532) rc522: write: Unknown transport[0m
+[0;31mE (900532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (903532) rc522: write: Unknown transport[0m
+[0;31mE (903532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (906532) rc522: write: Unknown transport[0m
+[0;31mE (906532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (909532) rc522: write: Unknown transport[0m
+[0;31mE (909532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (912532) rc522: write: Unknown transport[0m
+[0;31mE (912532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (915532) rc522: write: Unknown transport[0m
+[0;31mE (915532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (918532) rc522: write: Unknown transport[0m
+[0;31mE (918532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (921532) rc522: write: Unknown transport[0m
+[0;31mE (921532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (924532) rc522: write: Unknown transport[0m
+[0;31mE (924532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (927532) rc522: write: Unknown transport[0m
+[0;31mE (927532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (930532) rc522: write: Unknown transport[0m
+[0;31mE (930532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (933532) rc522: write: Unknown transport[0m
+[0;31mE (933532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (936532) rc522: write: Unknown transport[0m
+[0;31mE (936532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (939532) rc522: write: Unknown transport[0m
+[0;31mE (939532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (942532) rc522: write: Unknown transport[0m
+[0;31mE (942532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (945532) rc522: write: Unknown transport[0m
+[0;31mE (945532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (948532) rc522: write: Unknown transport[0m
+[0;31mE (948532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (951532) rc522: write: Unknown transport[0m
+[0;31mE (951532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (954532) rc522: write: Unknown transport[0m
+[0;31mE (954532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (957532) rc522: write: Unknown transport[0m
+[0;31mE (957532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (960532) rc522: write: Unknown transport[0m
+[0;31mE (960532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (963532) rc522: write: Unknown transport[0m
+[0;31mE (963532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (966532) rc522: write: Unknown transport[0m
+[0;31mE (966532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (969532) rc522: write: Unknown transport[0m
+[0;31mE (969532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (972532) rc522: write: Unknown transport[0m
+[0;31mE (972532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (975532) rc522: write: Unknown transport[0m
+[0;31mE (975532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (978532) rc522: write: Unknown transport[0m
+[0;31mE (978532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (981532) rc522: write: Unknown transport[0m
+[0;31mE (981532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (984532) rc522: write: Unknown transport[0m
+[0;31mE (984532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (987532) rc522: write: Unknown transport[0m
+[0;31mE (987532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (990532) rc522: write: Unknown transport[0m
+[0;31mE (990532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (993532) rc522: write: Unknown transport[0m
+[0;31mE (993532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (996532) rc522: write: Unknown transport[0m
+[0;31mE (996532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (999532) rc522: write: Unknown transport[0m
+[0;31mE (999532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1002532) rc522: write: Unknown transport[0m
+[0;31mE (1002532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1005532) rc522: write: Unknown transport[0m
+[0;31mE (1005532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1008532) rc522: write: Unknown transport[0m
+[0;31mE (1008532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1011532) rc522: write: Unknown transport[0m
+[0;31mE (1011532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1014532) rc522: write: Unknown transport[0m
+[0;31mE (1014532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1017532) rc522: write: Unknown transport[0m
+[0;31mE (1017532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1020532) rc522: write: Unknown transport[0m
+[0;31mE (1020532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1023532) rc522: write: Unknown transport[0m
+[0;31mE (1023532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1026532) rc522: write: Unknown transport[0m
+[0;31mE (1026532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1029532) rc522: write: Unknown transport[0m
+[0;31mE (1029532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1032532) rc522: write: Unknown transport[0m
+[0;31mE (1032532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1035532) rc522: write: Unknown transport[0m
+[0;31mE (1035532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1038532) rc522: write: Unknown transport[0m
+[0;31mE (1038532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1041532) rc522: write: Unknown transport[0m
+[0;31mE (1041532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1044532) rc522: write: Unknown transport[0m
+[0;31mE (1044532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1047532) rc522: write: Unknown transport[0m
+[0;31mE (1047532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1050532) rc522: write: Unknown transport[0m
+[0;31mE (1050532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1053532) rc522: write: Unknown transport[0m
+[0;31mE (1053532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1056532) rc522: write: Unknown transport[0m
+[0;31mE (1056532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1059532) rc522: write: Unknown transport[0m
+[0;31mE (1059532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1062532) rc522: write: Unknown transport[0m
+[0;31mE (1062532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1065532) rc522: write: Unknown transport[0m
+[0;31mE (1065532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1068532) rc522: write: Unknown transport[0m
+[0;31mE (1068532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1071532) rc522: write: Unknown transport[0m
+[0;31mE (1071532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1074532) rc522: write: Unknown transport[0m
+[0;31mE (1074532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1077532) rc522: write: Unknown transport[0m
+[0;31mE (1077532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1080532) rc522: write: Unknown transport[0m
+[0;31mE (1080532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1083532) rc522: write: Unknown transport[0m
+[0;31mE (1083532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1086532) rc522: write: Unknown transport[0m
+[0;31mE (1086532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1089532) rc522: write: Unknown transport[0m
+[0;31mE (1089532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1092532) rc522: write: Unknown transport[0m
+[0;31mE (1092532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1095532) rc522: write: Unknown transport[0m
+[0;31mE (1095532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1098532) rc522: write: Unknown transport[0m
+[0;31mE (1098532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1101532) rc522: write: Unknown transport[0m
+[0;31mE (1101532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1104532) rc522: write: Unknown transport[0m
+[0;31mE (1104532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1107532) rc522: write: Unknown transport[0m
+[0;31mE (1107532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1110532) rc522: write: Unknown transport[0m
+[0;31mE (1110532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1113532) rc522: write: Unknown transport[0m
+[0;31mE (1113532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1116532) rc522: write: Unknown transport[0m
+[0;31mE (1116532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1119532) rc522: write: Unknown transport[0m
+[0;31mE (1119532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1122532) rc522: write: Unknown transport[0m
+[0;31mE (1122532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1125532) rc522: write: Unknown transport[0m
+[0;31mE (1125532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1128532) rc522: write: Unknown transport[0m
+[0;31mE (1128532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1131532) rc522: write: Unknown transport[0m
+[0;31mE (1131532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1134532) rc522: write: Unknown transport[0m
+[0;31mE (1134532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1137532) rc522: write: Unknown transport[0m
+[0;31mE (1137532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1140532) rc522: write: Unknown transport[0m
+[0;31mE (1140532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1143532) rc522: write: Unknown transport[0m
+[0;31mE (1143532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1146532) rc522: write: Unknown transport[0m
+[0;31mE (1146532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1149532) rc522: write: Unknown transport[0m
+[0;31mE (1149532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1152532) rc522: write: Unknown transport[0m
+[0;31mE (1152532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1155532) rc522: write: Unknown transport[0m
+[0;31mE (1155532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1158532) rc522: write: Unknown transport[0m
+[0;31mE (1158532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1161532) rc522: write: Unknown transport[0m
+[0;31mE (1161532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1164532) rc522: write: Unknown transport[0m
+[0;31mE (1164532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1167532) rc522: write: Unknown transport[0m
+[0;31mE (1167532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1170532) rc522: write: Unknown transport[0m
+[0;31mE (1170532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1173532) rc522: write: Unknown transport[0m
+[0;31mE (1173532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1176532) rc522: write: Unknown transport[0m
+[0;31mE (1176532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1179532) rc522: write: Unknown transport[0m
+[0;31mE (1179532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1182532) rc522: write: Unknown transport[0m
+[0;31mE (1182532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1185532) rc522: write: Unknown transport[0m
+[0;31mE (1185532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1188532) rc522: write: Unknown transport[0m
+[0;31mE (1188532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1191532) rc522: write: Unknown transport[0m
+[0;31mE (1191532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1194532) rc522: write: Unknown transport[0m
+[0;31mE (1194532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1197532) rc522: write: Unknown transport[0m
+[0;31mE (1197532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1200532) rc522: write: Unknown transport[0m
+[0;31mE (1200532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1203532) rc522: write: Unknown transport[0m
+[0;31mE (1203532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1206532) rc522: write: Unknown transport[0m
+[0;31mE (1206532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1209532) rc522: write: Unknown transport[0m
+[0;31mE (1209532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1212532) rc522: write: Unknown transport[0m
+[0;31mE (1212532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1215532) rc522: write: Unknown transport[0m
+[0;31mE (1215532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1218532) rc522: write: Unknown transport[0m
+[0;31mE (1218532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1221532) rc522: write: Unknown transport[0m
+[0;31mE (1221532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1224532) rc522: write: Unknown transport[0m
+[0;31mE (1224532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1227532) rc522: write: Unknown transport[0m
+[0;31mE (1227532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1230532) rc522: write: Unknown transport[0m
+[0;31mE (1230532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1233532) rc522: write: Unknown transport[0m
+[0;31mE (1233532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1236532) rc522: write: Unknown transport[0m
+[0;31mE (1236532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1239532) rc522: write: Unknown transport[0m
+[0;31mE (1239532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1242532) rc522: write: Unknown transport[0m
+[0;31mE (1242532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1245532) rc522: write: Unknown transport[0m
+[0;31mE (1245532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1248532) rc522: write: Unknown transport[0m
+[0;31mE (1248532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1251532) rc522: write: Unknown transport[0m
+[0;31mE (1251532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1254532) rc522: write: Unknown transport[0m
+[0;31mE (1254532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1257532) rc522: write: Unknown transport[0m
+[0;31mE (1257532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1260532) rc522: write: Unknown transport[0m
+[0;31mE (1260532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1263532) rc522: write: Unknown transport[0m
+[0;31mE (1263532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1266532) rc522: write: Unknown transport[0m
+[0;31mE (1266532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1269532) rc522: write: Unknown transport[0m
+[0;31mE (1269532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1272532) rc522: write: Unknown transport[0m
+[0;31mE (1272532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1275532) rc522: write: Unknown transport[0m
+[0;31mE (1275532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1278532) rc522: write: Unknown transport[0m
+[0;31mE (1278532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1281532) rc522: write: Unknown transport[0m
+[0;31mE (1281532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1284532) rc522: write: Unknown transport[0m
+[0;31mE (1284532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1287532) rc522: write: Unknown transport[0m
+[0;31mE (1287532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1290532) rc522: write: Unknown transport[0m
+[0;31mE (1290532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1293532) rc522: write: Unknown transport[0m
+[0;31mE (1293532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1296532) rc522: write: Unknown transport[0m
+[0;31mE (1296532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1299532) rc522: write: Unknown transport[0m
+[0;31mE (1299532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1302532) rc522: write: Unknown transport[0m
+[0;31mE (1302532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1305532) rc522: write: Unknown transport[0m
+[0;31mE (1305532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1308532) rc522: write: Unknown transport[0m
+[0;31mE (1308532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1311532) rc522: write: Unknown transport[0m
+[0;31mE (1311532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1314532) rc522: write: Unknown transport[0m
+[0;31mE (1314532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1317532) rc522: write: Unknown transport[0m
+[0;31mE (1317532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1320532) rc522: write: Unknown transport[0m
+[0;31mE (1320532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1323532) rc522: write: Unknown transport[0m
+[0;31mE (1323532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1326532) rc522: write: Unknown transport[0m
+[0;31mE (1326532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1329532) rc522: write: Unknown transport[0m
+[0;31mE (1329532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1332532) rc522: write: Unknown transport[0m
+[0;31mE (1332532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1335532) rc522: write: Unknown transport[0m
+[0;31mE (1335532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1338532) rc522: write: Unknown transport[0m
+[0;31mE (1338532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1341532) rc522: write: Unknown transport[0m
+[0;31mE (1341532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1344532) rc522: write: Unknown transport[0m
+[0;31mE (1344532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1347532) rc522: write: Unknown transport[0m
+[0;31mE (1347532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1350532) rc522: write: Unknown transport[0m
+[0;31mE (1350532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1353532) rc522: write: Unknown transport[0m
+[0;31mE (1353532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1356532) rc522: write: Unknown transport[0m
+[0;31mE (1356532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1359532) rc522: write: Unknown transport[0m
+[0;31mE (1359532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1362532) rc522: write: Unknown transport[0m
+[0;31mE (1362532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1365532) rc522: write: Unknown transport[0m
+[0;31mE (1365532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1368532) rc522: write: Unknown transport[0m
+[0;31mE (1368532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1371532) rc522: write: Unknown transport[0m
+[0;31mE (1371532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1374532) rc522: write: Unknown transport[0m
+[0;31mE (1374532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1377532) rc522: write: Unknown transport[0m
+[0;31mE (1377532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1380532) rc522: write: Unknown transport[0m
+[0;31mE (1380532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1383532) rc522: write: Unknown transport[0m
+[0;31mE (1383532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1386532) rc522: write: Unknown transport[0m
+[0;31mE (1386532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1389532) rc522: write: Unknown transport[0m
+[0;31mE (1389532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1392532) rc522: write: Unknown transport[0m
+[0;31mE (1392532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1395532) rc522: write: Unknown transport[0m
+[0;31mE (1395532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1398532) rc522: write: Unknown transport[0m
+[0;31mE (1398532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1401532) rc522: write: Unknown transport[0m
+[0;31mE (1401532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1404532) rc522: write: Unknown transport[0m
+[0;31mE (1404532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1407532) rc522: write: Unknown transport[0m
+[0;31mE (1407532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1410532) rc522: write: Unknown transport[0m
+[0;31mE (1410532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1413532) rc522: write: Unknown transport[0m
+[0;31mE (1413532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1416532) rc522: write: Unknown transport[0m
+[0;31mE (1416532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1419532) rc522: write: Unknown transport[0m
+[0;31mE (1419532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1422532) rc522: write: Unknown transport[0m
+[0;31mE (1422532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1425532) rc522: write: Unknown transport[0m
+[0;31mE (1425532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1428532) rc522: write: Unknown transport[0m
+[0;31mE (1428532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1431532) rc522: write: Unknown transport[0m
+[0;31mE (1431532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1434532) rc522: write: Unknown transport[0m
+[0;31mE (1434532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1437532) rc522: write: Unknown transport[0m
+[0;31mE (1437532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1440532) rc522: write: Unknown transport[0m
+[0;31mE (1440532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1443532) rc522: write: Unknown transport[0m
+[0;31mE (1443532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1446532) rc522: write: Unknown transport[0m
+[0;31mE (1446532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1449532) rc522: write: Unknown transport[0m
+[0;31mE (1449532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1452532) rc522: write: Unknown transport[0m
+[0;31mE (1452532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1455532) rc522: write: Unknown transport[0m
+[0;31mE (1455532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1458532) rc522: write: Unknown transport[0m
+[0;31mE (1458532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1461532) rc522: write: Unknown transport[0m
+[0;31mE (1461532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1464532) rc522: write: Unknown transport[0m
+[0;31mE (1464532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1467532) rc522: write: Unknown transport[0m
+[0;31mE (1467532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1470532) rc522: write: Unknown transport[0m
+[0;31mE (1470532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1473532) rc522: write: Unknown transport[0m
+[0;31mE (1473532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1476532) rc522: write: Unknown transport[0m
+[0;31mE (1476532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1479532) rc522: write: Unknown transport[0m
+[0;31mE (1479532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1482532) rc522: write: Unknown transport[0m
+[0;31mE (1482532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1485532) rc522: write: Unknown transport[0m
+[0;31mE (1485532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1488532) rc522: write: Unknown transport[0m
+[0;31mE (1488532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1491532) rc522: write: Unknown transport[0m
+[0;31mE (1491532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1494532) rc522: write: Unknown transport[0m
+[0;31mE (1494532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1497532) rc522: write: Unknown transport[0m
+[0;31mE (1497532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1500532) rc522: write: Unknown transport[0m
+[0;31mE (1500532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1503532) rc522: write: Unknown transport[0m
+[0;31mE (1503532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1506532) rc522: write: Unknown transport[0m
+[0;31mE (1506532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1509532) rc522: write: Unknown transport[0m
+[0;31mE (1509532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1512532) rc522: write: Unknown transport[0m
+[0;31mE (1512532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1515532) rc522: write: Unknown transport[0m
+[0;31mE (1515532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1518532) rc522: write: Unknown transport[0m
+[0;31mE (1518532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1521532) rc522: write: Unknown transport[0m
+[0;31mE (1521532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1524532) rc522: write: Unknown transport[0m
+[0;31mE (1524532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1527532) rc522: write: Unknown transport[0m
+[0;31mE (1527532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1530532) rc522: write: Unknown transport[0m
+[0;31mE (1530532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1533532) rc522: write: Unknown transport[0m
+[0;31mE (1533532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1536532) rc522: write: Unknown transport[0m
+[0;31mE (1536532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1539532) rc522: write: Unknown transport[0m
+[0;31mE (1539532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1542532) rc522: write: Unknown transport[0m
+[0;31mE (1542532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1545532) rc522: write: Unknown transport[0m
+[0;31mE (1545532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1548532) rc522: write: Unknown transport[0m
+[0;31mE (1548532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1551532) rc522: write: Unknown transport[0m
+[0;31mE (1551532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1554532) rc522: write: Unknown transport[0m
+[0;31mE (1554532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1557532) rc522: write: Unknown transport[0m
+[0;31mE (1557532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1560532) rc522: write: Unknown transport[0m
+[0;31mE (1560532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1563532) rc522: write: Unknown transport[0m
+[0;31mE (1563532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1566532) rc522: write: Unknown transport[0m
+[0;31mE (1566532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1569532) rc522: write: Unknown transport[0m
+[0;31mE (1569532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1572532) rc522: write: Unknown transport[0m
+[0;31mE (1572532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1575532) rc522: write: Unknown transport[0m
+[0;31mE (1575532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1578532) rc522: write: Unknown transport[0m
+[0;31mE (1578532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1581532) rc522: write: Unknown transport[0m
+[0;31mE (1581532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1584532) rc522: write: Unknown transport[0m
+[0;31mE (1584532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1587532) rc522: write: Unknown transport[0m
+[0;31mE (1587532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1590532) rc522: write: Unknown transport[0m
+[0;31mE (1590532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1593532) rc522: write: Unknown transport[0m
+[0;31mE (1593532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1596532) rc522: write: Unknown transport[0m
+[0;31mE (1596532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1599532) rc522: write: Unknown transport[0m
+[0;31mE (1599532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1602532) rc522: write: Unknown transport[0m
+[0;31mE (1602532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1605532) rc522: write: Unknown transport[0m
+[0;31mE (1605532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1608532) rc522: write: Unknown transport[0m
+[0;31mE (1608532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1611532) rc522: write: Unknown transport[0m
+[0;31mE (1611532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1614532) rc522: write: Unknown transport[0m
+[0;31mE (1614532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1617532) rc522: write: Unknown transport[0m
+[0;31mE (1617532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1620532) rc522: write: Unknown transport[0m
+[0;31mE (1620532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1623532) rc522: write: Unknown transport[0m
+[0;31mE (1623532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1626532) rc522: write: Unknown transport[0m
+[0;31mE (1626532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1629532) rc522: write: Unknown transport[0m
+[0;31mE (1629532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1632532) rc522: write: Unknown transport[0m
+[0;31mE (1632532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1635532) rc522: write: Unknown transport[0m
+[0;31mE (1635532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1638532) rc522: write: Unknown transport[0m
+[0;31mE (1638532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1641532) rc522: write: Unknown transport[0m
+[0;31mE (1641532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1644532) rc522: write: Unknown transport[0m
+[0;31mE (1644532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1647532) rc522: write: Unknown transport[0m
+[0;31mE (1647532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1650532) rc522: write: Unknown transport[0m
+[0;31mE (1650532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1653532) rc522: write: Unknown transport[0m
+[0;31mE (1653532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1656532) rc522: write: Unknown transport[0m
+[0;31mE (1656532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1659532) rc522: write: Unknown transport[0m
+[0;31mE (1659532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1662532) rc522: write: Unknown transport[0m
+[0;31mE (1662532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1665532) rc522: write: Unknown transport[0m
+[0;31mE (1665532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1668532) rc522: write: Unknown transport[0m
+[0;31mE (1668532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1671532) rc522: write: Unknown transport[0m
+[0;31mE (1671532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1674532) rc522: write: Unknown transport[0m
+[0;31mE (1674532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1677532) rc522: write: Unknown transport[0m
+[0;31mE (1677532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1680532) rc522: write: Unknown transport[0m
+[0;31mE (1680532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1683532) rc522: write: Unknown transport[0m
+[0;31mE (1683532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1686532) rc522: write: Unknown transport[0m
+[0;31mE (1686532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1689532) rc522: write: Unknown transport[0m
+[0;31mE (1689532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1692532) rc522: write: Unknown transport[0m
+[0;31mE (1692532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1695532) rc522: write: Unknown transport[0m
+[0;31mE (1695532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1698532) rc522: write: Unknown transport[0m
+[0;31mE (1698532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1701532) rc522: write: Unknown transport[0m
+[0;31mE (1701532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1704532) rc522: write: Unknown transport[0m
+[0;31mE (1704532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1707532) rc522: write: Unknown transport[0m
+[0;31mE (1707532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1710532) rc522: write: Unknown transport[0m
+[0;31mE (1710532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1713532) rc522: write: Unknown transport[0m
+[0;31mE (1713532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1716532) rc522: write: Unknown transport[0m
+[0;31mE (1716532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1719532) rc522: write: Unknown transport[0m
+[0;31mE (1719532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1722532) rc522: write: Unknown transport[0m
+[0;31mE (1722532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1725532) rc522: write: Unknown transport[0m
+[0;31mE (1725532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1728532) rc522: write: Unknown transport[0m
+[0;31mE (1728532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1731532) rc522: write: Unknown transport[0m
+[0;31mE (1731532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1734532) rc522: write: Unknown transport[0m
+[0;31mE (1734532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1737532) rc522: write: Unknown transport[0m
+[0;31mE (1737532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1740532) rc522: write: Unknown transport[0m
+[0;31mE (1740532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1743532) rc522: write: Unknown transport[0m
+[0;31mE (1743532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1746532) rc522: write: Unknown transport[0m
+[0;31mE (1746532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1749532) rc522: write: Unknown transport[0m
+[0;31mE (1749532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1752532) rc522: write: Unknown transport[0m
+[0;31mE (1752532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1755532) rc522: write: Unknown transport[0m
+[0;31mE (1755532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1758532) rc522: write: Unknown transport[0m
+[0;31mE (1758532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1761532) rc522: write: Unknown transport[0m
+[0;31mE (1761532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1764532) rc522: write: Unknown transport[0m
+[0;31mE (1764532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1767532) rc522: write: Unknown transport[0m
+[0;31mE (1767532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1770532) rc522: write: Unknown transport[0m
+[0;31mE (1770532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1773532) rc522: write: Unknown transport[0m
+[0;31mE (1773532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1776532) rc522: write: Unknown transport[0m
+[0;31mE (1776532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1779532) rc522: write: Unknown transport[0m
+[0;31mE (1779532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1782532) rc522: write: Unknown transport[0m
+[0;31mE (1782532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1785532) rc522: write: Unknown transport[0m
+[0;31mE (1785532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1788532) rc522: write: Unknown transport[0m
+[0;31mE (1788532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1791532) rc522: write: Unknown transport[0m
+[0;31mE (1791532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1794532) rc522: write: Unknown transport[0m
+[0;31mE (1794532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1797532) rc522: write: Unknown transport[0m
+[0;31mE (1797532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1800532) rc522: write: Unknown transport[0m
+[0;31mE (1800532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1803532) rc522: write: Unknown transport[0m
+[0;31mE (1803532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1806532) rc522: write: Unknown transport[0m
+[0;31mE (1806532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1809532) rc522: write: Unknown transport[0m
+[0;31mE (1809532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1812532) rc522: write: Unknown transport[0m
+[0;31mE (1812532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1815532) rc522: write: Unknown transport[0m
+[0;31mE (1815532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1818532) rc522: write: Unknown transport[0m
+[0;31mE (1818532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1821532) rc522: write: Unknown transport[0m
+[0;31mE (1821532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1824532) rc522: write: Unknown transport[0m
+[0;31mE (1824532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1827532) rc522: write: Unknown transport[0m
+[0;31mE (1827532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1830532) rc522: write: Unknown transport[0m
+[0;31mE (1830532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1833532) rc522: write: Unknown transport[0m
+[0;31mE (1833532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1836532) rc522: write: Unknown transport[0m
+[0;31mE (1836532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1839532) rc522: write: Unknown transport[0m
+[0;31mE (1839532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1842532) rc522: write: Unknown transport[0m
+[0;31mE (1842532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1845532) rc522: write: Unknown transport[0m
+[0;31mE (1845532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1848532) rc522: write: Unknown transport[0m
+[0;31mE (1848532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1851532) rc522: write: Unknown transport[0m
+[0;31mE (1851532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1854532) rc522: write: Unknown transport[0m
+[0;31mE (1854532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1857532) rc522: write: Unknown transport[0m
+[0;31mE (1857532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1860532) rc522: write: Unknown transport[0m
+[0;31mE (1860532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1863532) rc522: write: Unknown transport[0m
+[0;31mE (1863532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1866532) rc522: write: Unknown transport[0m
+[0;31mE (1866532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1869532) rc522: write: Unknown transport[0m
+[0;31mE (1869532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1872532) rc522: write: Unknown transport[0m
+[0;31mE (1872532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1875532) rc522: write: Unknown transport[0m
+[0;31mE (1875532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1878532) rc522: write: Unknown transport[0m
+[0;31mE (1878532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1881532) rc522: write: Unknown transport[0m
+[0;31mE (1881532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1884532) rc522: write: Unknown transport[0m
+[0;31mE (1884532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1887532) rc522: write: Unknown transport[0m
+[0;31mE (1887532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1890532) rc522: write: Unknown transport[0m
+[0;31mE (1890532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1893532) rc522: write: Unknown transport[0m
+[0;31mE (1893532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1896532) rc522: write: Unknown transport[0m
+[0;31mE (1896532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1899532) rc522: write: Unknown transport[0m
+[0;31mE (1899532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1902532) rc522: write: Unknown transport[0m
+[0;31mE (1902532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1905532) rc522: write: Unknown transport[0m
+[0;31mE (1905532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1908532) rc522: write: Unknown transport[0m
+[0;31mE (1908532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1911532) rc522: write: Unknown transport[0m
+[0;31mE (1911532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1914532) rc522: write: Unknown transport[0m
+[0;31mE (1914532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1917532) rc522: write: Unknown transport[0m
+[0;31mE (1917532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1920532) rc522: write: Unknown transport[0m
+[0;31mE (1920532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1923532) rc522: write: Unknown transport[0m
+[0;31mE (1923532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1926532) rc522: write: Unknown transport[0m
+[0;31mE (1926532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1929532) rc522: write: Unknown transport[0m
+[0;31mE (1929532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1932532) rc522: write: Unknown transport[0m
+[0;31mE (1932532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1935532) rc522: write: Unknown transport[0m
+[0;31mE (1935532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1938532) rc522: write: Unknown transport[0m
+[0;31mE (1938532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1941532) rc522: write: Unknown transport[0m
+[0;31mE (1941532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1944532) rc522: write: Unknown transport[0m
+[0;31mE (1944532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1947532) rc522: write: Unknown transport[0m
+[0;31mE (1947532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1950532) rc522: write: Unknown transport[0m
+[0;31mE (1950532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1953532) rc522: write: Unknown transport[0m
+[0;31mE (1953532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1956532) rc522: write: Unknown transport[0m
+[0;31mE (1956532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1959532) rc522: write: Unknown transport[0m
+[0;31mE (1959532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1962532) rc522: write: Unknown transport[0m
+[0;31mE (1962532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1965532) rc522: write: Unknown transport[0m
+[0;31mE (1965532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1968532) rc522: write: Unknown transport[0m
+[0;31mE (1968532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1971532) rc522: write: Unknown transport[0m
+[0;31mE (1971532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1974532) rc522: write: Unknown transport[0m
+[0;31mE (1974532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1977532) rc522: write: Unknown transport[0m
+[0;31mE (1977532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1980532) rc522: write: Unknown transport[0m
+[0;31mE (1980532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1983532) rc522: write: Unknown transport[0m
+[0;31mE (1983532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1986532) rc522: write: Unknown transport[0m
+[0;31mE (1986532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1989532) rc522: write: Unknown transport[0m
+[0;31mE (1989532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1992532) rc522: write: Unknown transport[0m
+[0;31mE (1992532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1995532) rc522: write: Unknown transport[0m
+[0;31mE (1995532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (1998532) rc522: write: Unknown transport[0m
+[0;31mE (1998532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2001532) rc522: write: Unknown transport[0m
+[0;31mE (2001532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2004532) rc522: write: Unknown transport[0m
+[0;31mE (2004532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2007532) rc522: write: Unknown transport[0m
+[0;31mE (2007532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2010532) rc522: write: Unknown transport[0m
+[0;31mE (2010532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2013532) rc522: write: Unknown transport[0m
+[0;31mE (2013532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2016532) rc522: write: Unknown transport[0m
+[0;31mE (2016532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2019532) rc522: write: Unknown transport[0m
+[0;31mE (2019532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2022532) rc522: write: Unknown transport[0m
+[0;31mE (2022532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2025532) rc522: write: Unknown transport[0m
+[0;31mE (2025532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2028532) rc522: write: Unknown transport[0m
+[0;31mE (2028532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2031532) rc522: write: Unknown transport[0m
+[0;31mE (2031532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2034532) rc522: write: Unknown transport[0m
+[0;31mE (2034532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2037532) rc522: write: Unknown transport[0m
+[0;31mE (2037532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2040532) rc522: write: Unknown transport[0m
+[0;31mE (2040532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2043532) rc522: write: Unknown transport[0m
+[0;31mE (2043532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2046532) rc522: write: Unknown transport[0m
+[0;31mE (2046532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2049532) rc522: write: Unknown transport[0m
+[0;31mE (2049532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2052532) rc522: write: Unknown transport[0m
+[0;31mE (2052532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2055532) rc522: write: Unknown transport[0m
+[0;31mE (2055532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2058532) rc522: write: Unknown transport[0m
+[0;31mE (2058532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2061532) rc522: write: Unknown transport[0m
+[0;31mE (2061532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2064532) rc522: write: Unknown transport[0m
+[0;31mE (2064532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2067532) rc522: write: Unknown transport[0m
+[0;31mE (2067532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2070532) rc522: write: Unknown transport[0m
+[0;31mE (2070532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2073532) rc522: write: Unknown transport[0m
+[0;31mE (2073532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2076532) rc522: write: Unknown transport[0m
+[0;31mE (2076532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2079532) rc522: write: Unknown transport[0m
+[0;31mE (2079532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2082532) rc522: write: Unknown transport[0m
+[0;31mE (2082532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2085532) rc522: write: Unknown transport[0m
+[0;31mE (2085532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2088532) rc522: write: Unknown transport[0m
+[0;31mE (2088532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2091532) rc522: write: Unknown transport[0m
+[0;31mE (2091532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2094532) rc522: write: Unknown transport[0m
+[0;31mE (2094532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2097532) rc522: write: Unknown transport[0m
+[0;31mE (2097532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2100532) rc522: write: Unknown transport[0m
+[0;31mE (2100532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2103532) rc522: write: Unknown transport[0m
+[0;31mE (2103532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2106532) rc522: write: Unknown transport[0m
+[0;31mE (2106532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2109532) rc522: write: Unknown transport[0m
+[0;31mE (2109532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2112532) rc522: write: Unknown transport[0m
+[0;31mE (2112532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2115532) rc522: write: Unknown transport[0m
+[0;31mE (2115532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2118532) rc522: write: Unknown transport[0m
+[0;31mE (2118532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2121532) rc522: write: Unknown transport[0m
+[0;31mE (2121532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2124532) rc522: write: Unknown transport[0m
+[0;31mE (2124532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2127532) rc522: write: Unknown transport[0m
+[0;31mE (2127532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2130532) rc522: write: Unknown transport[0m
+[0;31mE (2130532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2133532) rc522: write: Unknown transport[0m
+[0;31mE (2133532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2136532) rc522: write: Unknown transport[0m
+[0;31mE (2136532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2139532) rc522: write: Unknown transport[0m
+[0;31mE (2139532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2142532) rc522: write: Unknown transport[0m
+[0;31mE (2142532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2145532) rc522: write: Unknown transport[0m
+[0;31mE (2145532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2148532) rc522: write: Unknown transport[0m
+[0;31mE (2148532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2151532) rc522: write: Unknown transport[0m
+[0;31mE (2151532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2154532) rc522: write: Unknown transport[0m
+[0;31mE (2154532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2157532) rc522: write: Unknown transport[0m
+[0;31mE (2157532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2160532) rc522: write: Unknown transport[0m
+[0;31mE (2160532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2163532) rc522: write: Unknown transport[0m
+[0;31mE (2163532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2166532) rc522: write: Unknown transport[0m
+[0;31mE (2166532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2169532) rc522: write: Unknown transport[0m
+[0;31mE (2169532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2172532) rc522: write: Unknown transport[0m
+[0;31mE (2172532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2175532) rc522: write: Unknown transport[0m
+[0;31mE (2175532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2178532) rc522: write: Unknown transport[0m
+[0;31mE (2178532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2181532) rc522: write: Unknown transport[0m
+[0;31mE (2181532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2184532) rc522: write: Unknown transport[0m
+[0;31mE (2184532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2187532) rc522: write: Unknown transport[0m
+[0;31mE (2187532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2190532) rc522: write: Unknown transport[0m
+[0;31mE (2190532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2193532) rc522: write: Unknown transport[0m
+[0;31mE (2193532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2196532) rc522: write: Unknown transport[0m
+[0;31mE (2196532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2199532) rc522: write: Unknown transport[0m
+[0;31mE (2199532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2202532) rc522: write: Unknown transport[0m
+[0;31mE (2202532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2205532) rc522: write: Unknown transport[0m
+[0;31mE (2205532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2208532) rc522: write: Unknown transport[0m
+[0;31mE (2208532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2211532) rc522: write: Unknown transport[0m
+[0;31mE (2211532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2214532) rc522: write: Unknown transport[0m
+[0;31mE (2214532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2217532) rc522: write: Unknown transport[0m
+[0;31mE (2217532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2220532) rc522: write: Unknown transport[0m
+[0;31mE (2220532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2223532) rc522: write: Unknown transport[0m
+[0;31mE (2223532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2226532) rc522: write: Unknown transport[0m
+[0;31mE (2226532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2229532) rc522: write: Unknown transport[0m
+[0;31mE (2229532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2232532) rc522: write: Unknown transport[0m
+[0;31mE (2232532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2235532) rc522: write: Unknown transport[0m
+[0;31mE (2235532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2238532) rc522: write: Unknown transport[0m
+[0;31mE (2238532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2241532) rc522: write: Unknown transport[0m
+[0;31mE (2241532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2244532) rc522: write: Unknown transport[0m
+[0;31mE (2244532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2247532) rc522: write: Unknown transport[0m
+[0;31mE (2247532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2250532) rc522: write: Unknown transport[0m
+[0;31mE (2250532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2253532) rc522: write: Unknown transport[0m
+[0;31mE (2253532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2256532) rc522: write: Unknown transport[0m
+[0;31mE (2256532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2259532) rc522: write: Unknown transport[0m
+[0;31mE (2259532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2262532) rc522: write: Unknown transport[0m
+[0;31mE (2262532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2265532) rc522: write: Unknown transport[0m
+[0;31mE (2265532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2268532) rc522: write: Unknown transport[0m
+[0;31mE (2268532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2271532) rc522: write: Unknown transport[0m
+[0;31mE (2271532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2274532) rc522: write: Unknown transport[0m
+[0;31mE (2274532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2277532) rc522: write: Unknown transport[0m
+[0;31mE (2277532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2280532) rc522: write: Unknown transport[0m
+[0;31mE (2280532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2283532) rc522: write: Unknown transport[0m
+[0;31mE (2283532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2286532) rc522: write: Unknown transport[0m
+[0;31mE (2286532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2289532) rc522: write: Unknown transport[0m
+[0;31mE (2289532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2292532) rc522: write: Unknown transport[0m
+[0;31mE (2292532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2295532) rc522: write: Unknown transport[0m
+[0;31mE (2295532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2298532) rc522: write: Unknown transport[0m
+[0;31mE (2298532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2301532) rc522: write: Unknown transport[0m
+[0;31mE (2301532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2304532) rc522: write: Unknown transport[0m
+[0;31mE (2304532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2307532) rc522: write: Unknown transport[0m
+[0;31mE (2307532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2310532) rc522: write: Unknown transport[0m
+[0;31mE (2310532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2313532) rc522: write: Unknown transport[0m
+[0;31mE (2313532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2316532) rc522: write: Unknown transport[0m
+[0;31mE (2316532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2319532) rc522: write: Unknown transport[0m
+[0;31mE (2319532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2322532) rc522: write: Unknown transport[0m
+[0;31mE (2322532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2325532) rc522: write: Unknown transport[0m
+[0;31mE (2325532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2328532) rc522: write: Unknown transport[0m
+[0;31mE (2328532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2331532) rc522: write: Unknown transport[0m
+[0;31mE (2331532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2334532) rc522: write: Unknown transport[0m
+[0;31mE (2334532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2337532) rc522: write: Unknown transport[0m
+[0;31mE (2337532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2340532) rc522: write: Unknown transport[0m
+[0;31mE (2340532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2343532) rc522: write: Unknown transport[0m
+[0;31mE (2343532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2346532) rc522: write: Unknown transport[0m
+[0;31mE (2346532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2349532) rc522: write: Unknown transport[0m
+[0;31mE (2349532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2352532) rc522: write: Unknown transport[0m
+[0;31mE (2352532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2355532) rc522: write: Unknown transport[0m
+[0;31mE (2355532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2358532) rc522: write: Unknown transport[0m
+[0;31mE (2358532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2361532) rc522: write: Unknown transport[0m
+[0;31mE (2361532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2364532) rc522: write: Unknown transport[0m
+[0;31mE (2364532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2367532) rc522: write: Unknown transport[0m
+[0;31mE (2367532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2370532) rc522: write: Unknown transport[0m
+[0;31mE (2370532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2373532) rc522: write: Unknown transport[0m
+[0;31mE (2373532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2376532) rc522: write: Unknown transport[0m
+[0;31mE (2376532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2379532) rc522: write: Unknown transport[0m
+[0;31mE (2379532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2382532) rc522: write: Unknown transport[0m
+[0;31mE (2382532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2385532) rc522: write: Unknown transport[0m
+[0;31mE (2385532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2388532) rc522: write: Unknown transport[0m
+[0;31mE (2388532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2391532) rc522: write: Unknown transport[0m
+[0;31mE (2391532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2394532) rc522: write: Unknown transport[0m
+[0;31mE (2394532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2397532) rc522: write: Unknown transport[0m
+[0;31mE (2397532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2400532) rc522: write: Unknown transport[0m
+[0;31mE (2400532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2403532) rc522: write: Unknown transport[0m
+[0;31mE (2403532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2406532) rc522: write: Unknown transport[0m
+[0;31mE (2406532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2409532) rc522: write: Unknown transport[0m
+[0;31mE (2409532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2412532) rc522: write: Unknown transport[0m
+[0;31mE (2412532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2415532) rc522: write: Unknown transport[0m
+[0;31mE (2415532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2418532) rc522: write: Unknown transport[0m
+[0;31mE (2418532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2421532) rc522: write: Unknown transport[0m
+[0;31mE (2421532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2424532) rc522: write: Unknown transport[0m
+[0;31mE (2424532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2427532) rc522: write: Unknown transport[0m
+[0;31mE (2427532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2430532) rc522: write: Unknown transport[0m
+[0;31mE (2430532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2433532) rc522: write: Unknown transport[0m
+[0;31mE (2433532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2436532) rc522: write: Unknown transport[0m
+[0;31mE (2436532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2439532) rc522: write: Unknown transport[0m
+[0;31mE (2439532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2442532) rc522: write: Unknown transport[0m
+[0;31mE (2442532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2445532) rc522: write: Unknown transport[0m
+[0;31mE (2445532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2448532) rc522: write: Unknown transport[0m
+[0;31mE (2448532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2451532) rc522: write: Unknown transport[0m
+[0;31mE (2451532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2454532) rc522: write: Unknown transport[0m
+[0;31mE (2454532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2457532) rc522: write: Unknown transport[0m
+[0;31mE (2457532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2460532) rc522: write: Unknown transport[0m
+[0;31mE (2460532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2463532) rc522: write: Unknown transport[0m
+[0;31mE (2463532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2466532) rc522: write: Unknown transport[0m
+[0;31mE (2466532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2469532) rc522: write: Unknown transport[0m
+[0;31mE (2469532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2472532) rc522: write: Unknown transport[0m
+[0;31mE (2472532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2475532) rc522: write: Unknown transport[0m
+[0;31mE (2475532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2478532) rc522: write: Unknown transport[0m
+[0;31mE (2478532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2481532) rc522: write: Unknown transport[0m
+[0;31mE (2481532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2484532) rc522: write: Unknown transport[0m
+[0;31mE (2484532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2487532) rc522: write: Unknown transport[0m
+[0;31mE (2487532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2490532) rc522: write: Unknown transport[0m
+[0;31mE (2490532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2493532) rc522: write: Unknown transport[0m
+[0;31mE (2493532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2496532) rc522: write: Unknown transport[0m
+[0;31mE (2496532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2499532) rc522: write: Unknown transport[0m
+[0;31mE (2499532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2502532) rc522: write: Unknown transport[0m
+[0;31mE (2502532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2505532) rc522: write: Unknown transport[0m
+[0;31mE (2505532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2508532) rc522: write: Unknown transport[0m
+[0;31mE (2508532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2511532) rc522: write: Unknown transport[0m
+[0;31mE (2511532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2514532) rc522: write: Unknown transport[0m
+[0;31mE (2514532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2517532) rc522: write: Unknown transport[0m
+[0;31mE (2517532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2520532) rc522: write: Unknown transport[0m
+[0;31mE (2520532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2523532) rc522: write: Unknown transport[0m
+[0;31mE (2523532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2526532) rc522: write: Unknown transport[0m
+[0;31mE (2526532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2529532) rc522: write: Unknown transport[0m
+[0;31mE (2529532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2532532) rc522: write: Unknown transport[0m
+[0;31mE (2532532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2535532) rc522: write: Unknown transport[0m
+[0;31mE (2535532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2538532) rc522: write: Unknown transport[0m
+[0;31mE (2538532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2541532) rc522: write: Unknown transport[0m
+[0;31mE (2541532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2544532) rc522: write: Unknown transport[0m
+[0;31mE (2544532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2547532) rc522: write: Unknown transport[0m
+[0;31mE (2547532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2550532) rc522: write: Unknown transport[0m
+[0;31mE (2550532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2553532) rc522: write: Unknown transport[0m
+[0;31mE (2553532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2556532) rc522: write: Unknown transport[0m
+[0;31mE (2556532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2559532) rc522: write: Unknown transport[0m
+[0;31mE (2559532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2562532) rc522: write: Unknown transport[0m
+[0;31mE (2562532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2565532) rc522: write: Unknown transport[0m
+[0;31mE (2565532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2568532) rc522: write: Unknown transport[0m
+[0;31mE (2568532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2571532) rc522: write: Unknown transport[0m
+[0;31mE (2571532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2574532) rc522: write: Unknown transport[0m
+[0;31mE (2574532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2577532) rc522: write: Unknown transport[0m
+[0;31mE (2577532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2580532) rc522: write: Unknown transport[0m
+[0;31mE (2580532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2583532) rc522: write: Unknown transport[0m
+[0;31mE (2583532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2586532) rc522: write: Unknown transport[0m
+[0;31mE (2586532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2589532) rc522: write: Unknown transport[0m
+[0;31mE (2589532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2592532) rc522: write: Unknown transport[0m
+[0;31mE (2592532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2595532) rc522: write: Unknown transport[0m
+[0;31mE (2595532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2598532) rc522: write: Unknown transport[0m
+[0;31mE (2598532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2601532) rc522: write: Unknown transport[0m
+[0;31mE (2601532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2604532) rc522: write: Unknown transport[0m
+[0;31mE (2604532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2607532) rc522: write: Unknown transport[0m
+[0;31mE (2607532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2610532) rc522: write: Unknown transport[0m
+[0;31mE (2610532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2613532) rc522: write: Unknown transport[0m
+[0;31mE (2613532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2616532) rc522: write: Unknown transport[0m
+[0;31mE (2616532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2619532) rc522: write: Unknown transport[0m
+[0;31mE (2619532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2622532) rc522: write: Unknown transport[0m
+[0;31mE (2622532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2625532) rc522: write: Unknown transport[0m
+[0;31mE (2625532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2628532) rc522: write: Unknown transport[0m
+[0;31mE (2628532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2631532) rc522: write: Unknown transport[0m
+[0;31mE (2631532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2634532) rc522: write: Unknown transport[0m
+[0;31mE (2634532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2637532) rc522: write: Unknown transport[0m
+[0;31mE (2637532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2640532) rc522: write: Unknown transport[0m
+[0;31mE (2640532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2643532) rc522: write: Unknown transport[0m
+[0;31mE (2643532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2646532) rc522: write: Unknown transport[0m
+[0;31mE (2646532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2649532) rc522: write: Unknown transport[0m
+[0;31mE (2649532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2652532) rc522: write: Unknown transport[0m
+[0;31mE (2652532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2655532) rc522: write: Unknown transport[0m
+[0;31mE (2655532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2658532) rc522: write: Unknown transport[0m
+[0;31mE (2658532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2661532) rc522: write: Unknown transport[0m
+[0;31mE (2661532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2664532) rc522: write: Unknown transport[0m
+[0;31mE (2664532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2667532) rc522: write: Unknown transport[0m
+[0;31mE (2667532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2670532) rc522: write: Unknown transport[0m
+[0;31mE (2670532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2673532) rc522: write: Unknown transport[0m
+[0;31mE (2673532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2676532) rc522: write: Unknown transport[0m
+[0;31mE (2676532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2679532) rc522: write: Unknown transport[0m
+[0;31mE (2679532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2682532) rc522: write: Unknown transport[0m
+[0;31mE (2682532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2685532) rc522: write: Unknown transport[0m
+[0;31mE (2685532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2688532) rc522: write: Unknown transport[0m
+[0;31mE (2688532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2691532) rc522: write: Unknown transport[0m
+[0;31mE (2691532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2694532) rc522: write: Unknown transport[0m
+[0;31mE (2694532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2697532) rc522: write: Unknown transport[0m
+[0;31mE (2697532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2700532) rc522: write: Unknown transport[0m
+[0;31mE (2700532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2703532) rc522: write: Unknown transport[0m
+[0;31mE (2703532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2706532) rc522: write: Unknown transport[0m
+[0;31mE (2706532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2709532) rc522: write: Unknown transport[0m
+[0;31mE (2709532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2712532) rc522: write: Unknown transport[0m
+[0;31mE (2712532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2715532) rc522: write: Unknown transport[0m
+[0;31mE (2715532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2718532) rc522: write: Unknown transport[0m
+[0;31mE (2718532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2721532) rc522: write: Unknown transport[0m
+[0;31mE (2721532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2724532) rc522: write: Unknown transport[0m
+[0;31mE (2724532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2727532) rc522: write: Unknown transport[0m
+[0;31mE (2727532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2730532) rc522: write: Unknown transport[0m
+[0;31mE (2730532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2733532) rc522: write: Unknown transport[0m
+[0;31mE (2733532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2736532) rc522: write: Unknown transport[0m
+[0;31mE (2736532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2739532) rc522: write: Unknown transport[0m
+[0;31mE (2739532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2742532) rc522: write: Unknown transport[0m
+[0;31mE (2742532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2745532) rc522: write: Unknown transport[0m
+[0;31mE (2745532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2748532) rc522: write: Unknown transport[0m
+[0;31mE (2748532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2751532) rc522: write: Unknown transport[0m
+[0;31mE (2751532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2754532) rc522: write: Unknown transport[0m
+[0;31mE (2754532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2757532) rc522: write: Unknown transport[0m
+[0;31mE (2757532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2760532) rc522: write: Unknown transport[0m
+[0;31mE (2760532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2763532) rc522: write: Unknown transport[0m
+[0;31mE (2763532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2766532) rc522: write: Unknown transport[0m
+[0;31mE (2766532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2769532) rc522: write: Unknown transport[0m
+[0;31mE (2769532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2772532) rc522: write: Unknown transport[0m
+[0;31mE (2772532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2775532) rc522: write: Unknown transport[0m
+[0;31mE (2775532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2778532) rc522: write: Unknown transport[0m
+[0;31mE (2778532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2781532) rc522: write: Unknown transport[0m
+[0;31mE (2781532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2784532) rc522: write: Unknown transport[0m
+[0;31mE (2784532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2787532) rc522: write: Unknown transport[0m
+[0;31mE (2787532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2790532) rc522: write: Unknown transport[0m
+[0;31mE (2790532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2793532) rc522: write: Unknown transport[0m
+[0;31mE (2793532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2796532) rc522: write: Unknown transport[0m
+[0;31mE (2796532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2799532) rc522: write: Unknown transport[0m
+[0;31mE (2799532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2802532) rc522: write: Unknown transport[0m
+[0;31mE (2802532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2805532) rc522: write: Unknown transport[0m
+[0;31mE (2805532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2808532) rc522: write: Unknown transport[0m
+[0;31mE (2808532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2811532) rc522: write: Unknown transport[0m
+[0;31mE (2811532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2814532) rc522: write: Unknown transport[0m
+[0;31mE (2814532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2817532) rc522: write: Unknown transport[0m
+[0;31mE (2817532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2820532) rc522: write: Unknown transport[0m
+[0;31mE (2820532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2823532) rc522: write: Unknown transport[0m
+[0;31mE (2823532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2826532) rc522: write: Unknown transport[0m
+[0;31mE (2826532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2829532) rc522: write: Unknown transport[0m
+[0;31mE (2829532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2832532) rc522: write: Unknown transport[0m
+[0;31mE (2832532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2835532) rc522: write: Unknown transport[0m
+[0;31mE (2835532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2838532) rc522: write: Unknown transport[0m
+[0;31mE (2838532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2841532) rc522: write: Unknown transport[0m
+[0;31mE (2841532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2844532) rc522: write: Unknown transport[0m
+[0;31mE (2844532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2847532) rc522: write: Unknown transport[0m
+[0;31mE (2847532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2850532) rc522: write: Unknown transport[0m
+[0;31mE (2850532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2853532) rc522: write: Unknown transport[0m
+[0;31mE (2853532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2856532) rc522: write: Unknown transport[0m
+[0;31mE (2856532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2859532) rc522: write: Unknown transport[0m
+[0;31mE (2859532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2862532) rc522: write: Unknown transport[0m
+[0;31mE (2862532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2865532) rc522: write: Unknown transport[0m
+[0;31mE (2865532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2868532) rc522: write: Unknown transport[0m
+[0;31mE (2868532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2871532) rc522: write: Unknown transport[0m
+[0;31mE (2871532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2874532) rc522: write: Unknown transport[0m
+[0;31mE (2874532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2877532) rc522: write: Unknown transport[0m
+[0;31mE (2877532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2880532) rc522: write: Unknown transport[0m
+[0;31mE (2880532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2883532) rc522: write: Unknown transport[0m
+[0;31mE (2883532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2886532) rc522: write: Unknown transport[0m
+[0;31mE (2886532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2889532) rc522: write: Unknown transport[0m
+[0;31mE (2889532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2892532) rc522: write: Unknown transport[0m
+[0;31mE (2892532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2895532) rc522: write: Unknown transport[0m
+[0;31mE (2895532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2898532) rc522: write: Unknown transport[0m
+[0;31mE (2898532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2901532) rc522: write: Unknown transport[0m
+[0;31mE (2901532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2904532) rc522: write: Unknown transport[0m
+[0;31mE (2904532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2907532) rc522: write: Unknown transport[0m
+[0;31mE (2907532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2910532) rc522: write: Unknown transport[0m
+[0;31mE (2910532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2913532) rc522: write: Unknown transport[0m
+[0;31mE (2913532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2916532) rc522: write: Unknown transport[0m
+[0;31mE (2916532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2919532) rc522: write: Unknown transport[0m
+[0;31mE (2919532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2922532) rc522: write: Unknown transport[0m
+[0;31mE (2922532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2925532) rc522: write: Unknown transport[0m
+[0;31mE (2925532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2928532) rc522: write: Unknown transport[0m
+[0;31mE (2928532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2931532) rc522: write: Unknown transport[0m
+[0;31mE (2931532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2934532) rc522: write: Unknown transport[0m
+[0;31mE (2934532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2937532) rc522: write: Unknown transport[0m
+[0;31mE (2937532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2940532) rc522: write: Unknown transport[0m
+[0;31mE (2940532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2943532) rc522: write: Unknown transport[0m
+[0;31mE (2943532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2946532) rc522: write: Unknown transport[0m
+[0;31mE (2946532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2949532) rc522: write: Unknown transport[0m
+[0;31mE (2949532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2952532) rc522: write: Unknown transport[0m
+[0;31mE (2952532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2955532) rc522: write: Unknown transport[0m
+[0;31mE (2955532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2958532) rc522: write: Unknown transport[0m
+[0;31mE (2958532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2961532) rc522: write: Unknown transport[0m
+[0;31mE (2961532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2964532) rc522: write: Unknown transport[0m
+[0;31mE (2964532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2967532) rc522: write: Unknown transport[0m
+[0;31mE (2967532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2970532) rc522: write: Unknown transport[0m
+[0;31mE (2970532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2973532) rc522: write: Unknown transport[0m
+[0;31mE (2973532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2976532) rc522: write: Unknown transport[0m
+[0;31mE (2976532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2979532) rc522: write: Unknown transport[0m
+[0;31mE (2979532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2982532) rc522: write: Unknown transport[0m
+[0;31mE (2982532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2985532) rc522: write: Unknown transport[0m
+[0;31mE (2985532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2988532) rc522: write: Unknown transport[0m
+[0;31mE (2988532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2991532) rc522: write: Unknown transport[0m
+[0;31mE (2991532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2994532) rc522: write: Unknown transport[0m
+[0;31mE (2994532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (2997532) rc522: write: Unknown transport[0m
+[0;31mE (2997532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3000532) rc522: write: Unknown transport[0m
+[0;31mE (3000532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3003532) rc522: write: Unknown transport[0m
+[0;31mE (3003532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3006532) rc522: write: Unknown transport[0m
+[0;31mE (3006532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3009532) rc522: write: Unknown transport[0m
+[0;31mE (3009532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3012532) rc522: write: Unknown transport[0m
+[0;31mE (3012532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3015532) rc522: write: Unknown transport[0m
+[0;31mE (3015532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3018532) rc522: write: Unknown transport[0m
+[0;31mE (3018532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3021532) rc522: write: Unknown transport[0m
+[0;31mE (3021532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3024532) rc522: write: Unknown transport[0m
+[0;31mE (3024532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3027532) rc522: write: Unknown transport[0m
+[0;31mE (3027532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3030532) rc522: write: Unknown transport[0m
+[0;31mE (3030532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3033532) rc522: write: Unknown transport[0m
+[0;31mE (3033532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3036532) rc522: write: Unknown transport[0m
+[0;31mE (3036532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3039532) rc522: write: Unknown transport[0m
+[0;31mE (3039532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3042532) rc522: write: Unknown transport[0m
+[0;31mE (3042532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3045532) rc522: write: Unknown transport[0m
+[0;31mE (3045532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3048532) rc522: write: Unknown transport[0m
+[0;31mE (3048532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3051532) rc522: write: Unknown transport[0m
+[0;31mE (3051532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3054532) rc522: write: Unknown transport[0m
+[0;31mE (3054532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3057532) rc522: write: Unknown transport[0m
+[0;31mE (3057532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3060532) rc522: write: Unknown transport[0m
+[0;31mE (3060532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3063532) rc522: write: Unknown transport[0m
+[0;31mE (3063532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3066532) rc522: write: Unknown transport[0m
+[0;31mE (3066532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3069532) rc522: write: Unknown transport[0m
+[0;31mE (3069532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3072532) rc522: write: Unknown transport[0m
+[0;31mE (3072532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3075532) rc522: write: Unknown transport[0m
+[0;31mE (3075532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3078532) rc522: write: Unknown transport[0m
+[0;31mE (3078532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3081532) rc522: write: Unknown transport[0m
+[0;31mE (3081532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3084532) rc522: write: Unknown transport[0m
+[0;31mE (3084532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3087532) rc522: write: Unknown transport[0m
+[0;31mE (3087532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3090532) rc522: write: Unknown transport[0m
+[0;31mE (3090532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3093532) rc522: write: Unknown transport[0m
+[0;31mE (3093532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3096532) rc522: write: Unknown transport[0m
+[0;31mE (3096532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3099532) rc522: write: Unknown transport[0m
+[0;31mE (3099532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3102532) rc522: write: Unknown transport[0m
+[0;31mE (3102532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3105532) rc522: write: Unknown transport[0m
+[0;31mE (3105532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3108532) rc522: write: Unknown transport[0m
+[0;31mE (3108532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3111532) rc522: write: Unknown transport[0m
+[0;31mE (3111532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3114532) rc522: write: Unknown transport[0m
+[0;31mE (3114532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3117532) rc522: write: Unknown transport[0m
+[0;31mE (3117532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3120532) rc522: write: Unknown transport[0m
+[0;31mE (3120532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3123532) rc522: write: Unknown transport[0m
+[0;31mE (3123532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3126532) rc522: write: Unknown transport[0m
+[0;31mE (3126532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3129532) rc522: write: Unknown transport[0m
+[0;31mE (3129532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3132532) rc522: write: Unknown transport[0m
+[0;31mE (3132532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3135532) rc522: write: Unknown transport[0m
+[0;31mE (3135532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3138532) rc522: write: Unknown transport[0m
+[0;31mE (3138532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3141532) rc522: write: Unknown transport[0m
+[0;31mE (3141532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3144532) rc522: write: Unknown transport[0m
+[0;31mE (3144532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3147532) rc522: write: Unknown transport[0m
+[0;31mE (3147532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3150532) rc522: write: Unknown transport[0m
+[0;31mE (3150532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3153532) rc522: write: Unknown transport[0m
+[0;31mE (3153532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3156532) rc522: write: Unknown transport[0m
+[0;31mE (3156532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3159532) rc522: write: Unknown transport[0m
+[0;31mE (3159532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3162532) rc522: write: Unknown transport[0m
+[0;31mE (3162532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3165532) rc522: write: Unknown transport[0m
+[0;31mE (3165532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3168532) rc522: write: Unknown transport[0m
+[0;31mE (3168532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3171532) rc522: write: Unknown transport[0m
+[0;31mE (3171532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3174532) rc522: write: Unknown transport[0m
+[0;31mE (3174532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3177532) rc522: write: Unknown transport[0m
+[0;31mE (3177532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3180532) rc522: write: Unknown transport[0m
+[0;31mE (3180532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3183532) rc522: write: Unknown transport[0m
+[0;31mE (3183532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3186532) rc522: write: Unknown transport[0m
+[0;31mE (3186532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3189532) rc522: write: Unknown transport[0m
+[0;31mE (3189532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3192532) rc522: write: Unknown transport[0m
+[0;31mE (3192532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3195532) rc522: write: Unknown transport[0m
+[0;31mE (3195532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3198532) rc522: write: Unknown transport[0m
+[0;31mE (3198532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3201532) rc522: write: Unknown transport[0m
+[0;31mE (3201532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3204532) rc522: write: Unknown transport[0m
+[0;31mE (3204532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3207532) rc522: write: Unknown transport[0m
+[0;31mE (3207532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3210532) rc522: write: Unknown transport[0m
+[0;31mE (3210532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3213532) rc522: write: Unknown transport[0m
+[0;31mE (3213532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3216532) rc522: write: Unknown transport[0m
+[0;31mE (3216532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3219532) rc522: write: Unknown transport[0m
+[0;31mE (3219532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m
+[0;31mE (3222532) rc522: write: Unknown transport[0m
+[0;31mE (3222532) rc522: Failed to write data (err: ESP_ERR_INVALID_STATE)[0m

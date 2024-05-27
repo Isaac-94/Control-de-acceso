@@ -1,0 +1,1512 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x3 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_REO_V2))
+waiting for download
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15540
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time May  7 2024 20:15:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2b064h (176228) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=0003b08c vaddr=3ffb0000 size=03db0h ( 15792) load[0m
+[0;32mI (171) esp_image: segment 2: paddr=0003ee44 vaddr=40080000 size=011d4h (  4564) load[0m
+[0;32mI (173) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a03ach (656300) map[0m
+[0;32mI (404) esp_image: segment 4: paddr=000e03d4 vaddr=400811d4 size=185b0h ( 99760) load[0m
+[0;32mI (456) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (456) boot: Disabling RNG early entropy source...[0m
+[0;32mI (467) cpu_start: Multicore app[0m
+[0;32mI (476) cpu_start: Pro cpu start user code[0m
+[0;32mI (476) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (476) cpu_start: Application information:[0m
+[0;32mI (479) cpu_start: Project name:     mqtt-tcp[0m
+[0;32mI (484) cpu_start: App version:      1[0m
+[0;32mI (489) cpu_start: Compile time:     May 15 2024 11:39:57[0m
+[0;32mI (495) cpu_start: ELF file SHA256:  acd2c10e1...[0m
+[0;32mI (500) cpu_start: ESP-IDF:          v5.2.1[0m
+[0;32mI (505) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (510) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (514) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (519) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (527) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (532) heap_init: At 3FFB8500 len 00027B00 (158 KiB): DRAM[0m
+[0;32mI (539) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (545) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (551) heap_init: At 40099784 len 0000687C (26 KiB): IRAM[0m
+[0;32mI (559) spi_flash: detected chip: generic[0m
+[0;32mI (562) spi_flash: flash io: dio[0m
+[0;33mW (566) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (580) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (591) main_task: Started on CPU0[0m
+[0;32mI (601) main_task: Calling app_main()[0m
+[0;32mI (601) mqtt-logs: [APP] Startup..[0m
+[0;32mI (601) mqtt-logs: [APP] Free memory: 277584 bytes[0m
+[0;32mI (601) mqtt-logs: [APP] IDF version: v5.2.1[0m
+[0;32mI (631) example_connect: Start example_connect.[0m
+I (641) wifi:wifi driver task: 3ffc0058, prio:23, stack:6656, core=0
+I (641) wifi:wifi firmware version: a9f5b59
+I (641) wifi:wifi certification version: v7.0
+I (641) wifi:config NVS flash: enabled
+I (641) wifi:config nano formating: disabled
+I (651) wifi:Init data frame dynamic rx buffer num: 32
+I (651) wifi:Init static rx mgmt buffer num: 5
+I (651) wifi:Init management short buffer num: 32
+I (661) wifi:Init dynamic tx buffer num: 32
+I (661) wifi:Init static rx buffer size: 1600
+I (671) wifi:Init static rx buffer num: 10
+I (671) wifi:Init dynamic rx buffer num: 32
+[0;32mI (681) wifi_init: rx ba win: 6[0m
+[0;32mI (681) wifi_init: tcpip mbox: 32[0m
+[0;32mI (681) wifi_init: udp mbox: 6[0m
+[0;32mI (691) wifi_init: tcp mbox: 6[0m
+[0;32mI (691) wifi_init: tcp tx win: 5760[0m
+[0;32mI (691) wifi_init: tcp rx win: 5760[0m
+[0;32mI (701) wifi_init: tcp mss: 1440[0m
+[0;32mI (701) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (711) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (711) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+I (811) wifi:mode : sta (c8:f0:9e:7b:77:c4)
+I (811) wifi:enable tsf
+[0;32mI (811) example_connect: Connecting to Samsung...[0m
+[0;32mI (821) example_connect: Waiting for IP(s)[0m
+I (3231) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (3481) wifi:state: init -> auth (b0)
+I (3561) wifi:state: auth -> assoc (0)
+I (3591) wifi:state: assoc -> run (10)
+I (3611) wifi:connected with Samsung, aid = 3, channel 11, BW20, bssid = 12:59:7c:d1:8b:cd
+I (3621) wifi:security: WPA2-PSK, phy: bgn, rssi: -45
+I (3621) wifi:pm start, type: 1
+
+I (3621) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (3631) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us
+I (3641) wifi:AP's beacon interval = 102400 us, DTIM period = 2
+[0;32mI (4641) esp_netif_handlers: example_netif_sta ip: 192.168.177.12, mask: 255.255.255.0, gw: 192.168.177.81[0m
+[0;32mI (4641) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.177.12[0m
+[0;32mI (5631) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:caf0:9eff:fe7b:77c4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (5631) example_common: Connected to example_netif_sta[0m
+[0;32mI (5641) example_common: - IPv4 address: 192.168.177.12,[0m
+[0;32mI (5641) example_common: - IPv6 address: fe80:0000:0000:0000:caf0:9eff:fe7b:77c4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (5661) mqtt-logs: Other event id:7[0m
+[0;32mI (5661) rc522: Initialized (firmware v2.0)[0m
+[0;32mI (5671) main_task: Returned from app_main()[0m
+I (5721) wifi:<ba-add>idx:0 (ifx:0, 12:59:7c:d1:8b:cd), tid:0, ssn:3, winSize:64
+I (6301) wifi:<ba-add>idx:1 (ifx:0, 12:59:7c:d1:8b:cd), tid:1, ssn:0, winSize:64
+[0;32mI (6501) mqtt-logs: MQTT_EVENT_CONNECTED[0m
+[0;32mI (6511) mqtt-logs: se publicó el mensaje, msg_id=63199[0m
+[0;32mI (6511) mqtt-logs: Suscrito correctamente, msg_id=25600[0m
+[0;32mI (6921) mqtt-logs: MQTT_EVENT_PUBLISHED, msg_id=63199[0m
+[0;32mI (7331) mqtt-logs: MQTT_EVENT_SUBSCRIBED, msg_id=25600[0m
+[0;32mI (7331) mqtt-logs: sent publish successful, msg_id=0[0m
+[0;32mI (57771) rc522-logs: Tarjeta escaneada (sn: 142605371045)[0m
+[0;33mW (57771) event: handler already registered, overwriting[0m
+[0;32mI (90931) rc522-logs: Tarjeta escaneada (sn: 142605371045)[0m
+[0;33mW (90931) event: handler already registered, overwriting[0m
+I (1211431) wifi:state: run -> init (1a0)
+I (1211431) wifi:pm stop, total sleep time: 1136373770 us / 1207809111 us
+
+I (1211431) wifi:<ba-del>idx:0, tid:0
+I (1211431) wifi:<ba-del>idx:1, tid:1
+I (1211431) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1
+[0;32mI (1211441) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;31mE (1211441) transport_base: poll_read select error 113, errno = Software caused connection abort, fd = 54[0m
+[0;31mE (1211461) mqtt_client: Poll read error: 119, aborting connection[0m
+[0;32mI (1211471) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1213871) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (1216291) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (1218701) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (1221121) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (1223541) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (1225951) example_connect: WiFi Connect failed 7 times, stop reconnect.[0m
+[0;32mI (1226471) mqtt-logs: Other event id:7[0m
+[0;31mE (1226471) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1226471) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1226471) mqtt_client: Error transport connect[0m
+[0;32mI (1226481) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1226481) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1226491) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1226491) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1236501) mqtt-logs: Other event id:7[0m
+[0;31mE (1236501) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1236501) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1236501) mqtt_client: Error transport connect[0m
+[0;32mI (1236511) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1236511) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1236521) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1236521) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1246531) mqtt-logs: Other event id:7[0m
+[0;31mE (1246531) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1246531) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1246531) mqtt_client: Error transport connect[0m
+[0;32mI (1246541) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1246541) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1246551) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1246551) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1256561) mqtt-logs: Other event id:7[0m
+[0;31mE (1256561) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1256561) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1256561) mqtt_client: Error transport connect[0m
+[0;32mI (1256571) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1256571) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1256581) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1256581) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1266591) mqtt-logs: Other event id:7[0m
+[0;31mE (1266591) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1266591) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1266591) mqtt_client: Error transport connect[0m
+[0;32mI (1266601) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1266601) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1266611) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1266611) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1276621) mqtt-logs: Other event id:7[0m
+[0;31mE (1276621) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1276621) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1276621) mqtt_client: Error transport connect[0m
+[0;32mI (1276631) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1276631) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1276641) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1276641) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1286651) mqtt-logs: Other event id:7[0m
+[0;31mE (1286651) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1286651) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1286651) mqtt_client: Error transport connect[0m
+[0;32mI (1286661) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1286661) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1286671) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1286671) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1296681) mqtt-logs: Other event id:7[0m
+[0;31mE (1296681) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1296681) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1296681) mqtt_client: Error transport connect[0m
+[0;32mI (1296691) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1296691) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1296701) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1296701) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1306711) mqtt-logs: Other event id:7[0m
+[0;31mE (1306711) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1306711) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1306711) mqtt_client: Error transport connect[0m
+[0;32mI (1306721) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1306721) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1306731) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1306731) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1316741) mqtt-logs: Other event id:7[0m
+[0;31mE (1316741) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1316741) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1316741) mqtt_client: Error transport connect[0m
+[0;32mI (1316751) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1316751) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1316761) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1316761) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1326771) mqtt-logs: Other event id:7[0m
+[0;31mE (1326771) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1326771) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1326771) mqtt_client: Error transport connect[0m
+[0;32mI (1326781) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1326781) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1326791) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1326791) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1336801) mqtt-logs: Other event id:7[0m
+[0;31mE (1336801) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1336801) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1336801) mqtt_client: Error transport connect[0m
+[0;32mI (1336811) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1336811) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1336821) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1336821) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1346831) mqtt-logs: Other event id:7[0m
+[0;31mE (1346831) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1346831) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1346831) mqtt_client: Error transport connect[0m
+[0;32mI (1346841) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1346841) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1346851) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1346851) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1356861) mqtt-logs: Other event id:7[0m
+[0;31mE (1356861) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1356861) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1356861) mqtt_client: Error transport connect[0m
+[0;32mI (1356871) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1356871) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1356881) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1356881) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1366891) mqtt-logs: Other event id:7[0m
+[0;31mE (1366891) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1366891) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1366891) mqtt_client: Error transport connect[0m
+[0;32mI (1366901) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1366901) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1366911) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1366911) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1376921) mqtt-logs: Other event id:7[0m
+[0;31mE (1376921) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1376921) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1376921) mqtt_client: Error transport connect[0m
+[0;32mI (1376931) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1376931) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1376941) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1376941) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1386951) mqtt-logs: Other event id:7[0m
+[0;31mE (1386951) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1386951) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1386951) mqtt_client: Error transport connect[0m
+[0;32mI (1386961) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1386961) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1386971) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1386971) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1396981) mqtt-logs: Other event id:7[0m
+[0;31mE (1396981) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1396981) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1396981) mqtt_client: Error transport connect[0m
+[0;32mI (1396991) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1396991) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1397001) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1397001) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1407011) mqtt-logs: Other event id:7[0m
+[0;31mE (1407011) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1407011) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1407011) mqtt_client: Error transport connect[0m
+[0;32mI (1407021) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1407021) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1407031) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1407031) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1417041) mqtt-logs: Other event id:7[0m
+[0;31mE (1417041) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1417041) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1417041) mqtt_client: Error transport connect[0m
+[0;32mI (1417051) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1417051) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1417061) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1417061) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1427071) mqtt-logs: Other event id:7[0m
+[0;31mE (1427071) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1427071) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1427071) mqtt_client: Error transport connect[0m
+[0;32mI (1427081) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1427081) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1427091) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1427091) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1437101) mqtt-logs: Other event id:7[0m
+[0;31mE (1437101) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1437101) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1437101) mqtt_client: Error transport connect[0m
+[0;32mI (1437111) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1437111) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1437121) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1437121) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1447131) mqtt-logs: Other event id:7[0m
+[0;31mE (1447131) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1447131) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1447131) mqtt_client: Error transport connect[0m
+[0;32mI (1447141) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1447141) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1447151) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1447151) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1457161) mqtt-logs: Other event id:7[0m
+[0;31mE (1457161) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1457161) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1457161) mqtt_client: Error transport connect[0m
+[0;32mI (1457171) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1457171) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1457181) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1457181) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1467191) mqtt-logs: Other event id:7[0m
+[0;31mE (1467191) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1467191) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1467191) mqtt_client: Error transport connect[0m
+[0;32mI (1467201) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1467201) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1467211) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1467211) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1477221) mqtt-logs: Other event id:7[0m
+[0;31mE (1477221) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1477221) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1477221) mqtt_client: Error transport connect[0m
+[0;32mI (1477231) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1477231) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1477241) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1477241) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1487251) mqtt-logs: Other event id:7[0m
+[0;31mE (1487251) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1487251) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1487251) mqtt_client: Error transport connect[0m
+[0;32mI (1487261) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1487261) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1487271) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1487271) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1497281) mqtt-logs: Other event id:7[0m
+[0;31mE (1497281) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1497281) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1497281) mqtt_client: Error transport connect[0m
+[0;32mI (1497291) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1497291) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1497301) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1497301) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1507311) mqtt-logs: Other event id:7[0m
+[0;31mE (1507311) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1507311) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1507311) mqtt_client: Error transport connect[0m
+[0;32mI (1507321) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1507321) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1507331) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1507331) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1517341) mqtt-logs: Other event id:7[0m
+[0;31mE (1517341) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1517341) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1517341) mqtt_client: Error transport connect[0m
+[0;32mI (1517351) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1517351) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1517361) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1517361) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1527371) mqtt-logs: Other event id:7[0m
+[0;31mE (1527371) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1527371) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1527371) mqtt_client: Error transport connect[0m
+[0;32mI (1527381) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1527381) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1527391) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1527391) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1537401) mqtt-logs: Other event id:7[0m
+[0;31mE (1537401) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1537401) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1537401) mqtt_client: Error transport connect[0m
+[0;32mI (1537411) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1537411) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1537421) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1537421) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1547431) mqtt-logs: Other event id:7[0m
+[0;31mE (1547431) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1547431) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1547431) mqtt_client: Error transport connect[0m
+[0;32mI (1547441) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1547441) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1547451) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1547451) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1557461) mqtt-logs: Other event id:7[0m
+[0;31mE (1557461) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1557461) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1557461) mqtt_client: Error transport connect[0m
+[0;32mI (1557471) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1557471) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1557481) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1557481) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1567491) mqtt-logs: Other event id:7[0m
+[0;31mE (1567491) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1567491) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1567491) mqtt_client: Error transport connect[0m
+[0;32mI (1567501) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1567501) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1567511) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1567511) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1577521) mqtt-logs: Other event id:7[0m
+[0;31mE (1577521) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1577521) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1577521) mqtt_client: Error transport connect[0m
+[0;32mI (1577531) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1577531) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1577541) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1577541) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1587551) mqtt-logs: Other event id:7[0m
+[0;31mE (1587551) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1587551) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1587551) mqtt_client: Error transport connect[0m
+[0;32mI (1587561) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1587561) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1587571) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1587571) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1597581) mqtt-logs: Other event id:7[0m
+[0;31mE (1597581) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1597581) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1597581) mqtt_client: Error transport connect[0m
+[0;32mI (1597591) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1597591) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1597601) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1597601) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1607611) mqtt-logs: Other event id:7[0m
+[0;31mE (1607611) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1607611) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1607611) mqtt_client: Error transport connect[0m
+[0;32mI (1607621) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1607621) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1607631) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1607631) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1617641) mqtt-logs: Other event id:7[0m
+[0;31mE (1617641) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1617641) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1617641) mqtt_client: Error transport connect[0m
+[0;32mI (1617651) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1617651) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1617661) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1617661) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1627671) mqtt-logs: Other event id:7[0m
+[0;31mE (1627671) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1627671) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1627671) mqtt_client: Error transport connect[0m
+[0;32mI (1627681) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1627681) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1627691) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1627691) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1637701) mqtt-logs: Other event id:7[0m
+[0;31mE (1637701) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1637701) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1637701) mqtt_client: Error transport connect[0m
+[0;32mI (1637711) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1637711) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1637721) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1637721) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1647731) mqtt-logs: Other event id:7[0m
+[0;31mE (1647731) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1647731) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1647731) mqtt_client: Error transport connect[0m
+[0;32mI (1647741) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1647741) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1647751) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1647751) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1657761) mqtt-logs: Other event id:7[0m
+[0;31mE (1657761) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1657761) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1657761) mqtt_client: Error transport connect[0m
+[0;32mI (1657771) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1657771) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1657781) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1657781) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1667791) mqtt-logs: Other event id:7[0m
+[0;31mE (1667791) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1667791) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1667791) mqtt_client: Error transport connect[0m
+[0;32mI (1667801) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1667801) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1667811) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1667811) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1677821) mqtt-logs: Other event id:7[0m
+[0;31mE (1677821) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1677821) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1677821) mqtt_client: Error transport connect[0m
+[0;32mI (1677831) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1677831) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1677841) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1677841) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1687851) mqtt-logs: Other event id:7[0m
+[0;31mE (1687851) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1687851) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1687851) mqtt_client: Error transport connect[0m
+[0;32mI (1687861) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1687861) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1687871) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1687871) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1697881) mqtt-logs: Other event id:7[0m
+[0;31mE (1697881) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1697881) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1697881) mqtt_client: Error transport connect[0m
+[0;32mI (1697891) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1697891) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1697901) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1697901) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1707911) mqtt-logs: Other event id:7[0m
+[0;31mE (1707911) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1707911) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1707911) mqtt_client: Error transport connect[0m
+[0;32mI (1707921) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1707921) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1707931) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1707931) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1717941) mqtt-logs: Other event id:7[0m
+[0;31mE (1717941) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1717941) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1717941) mqtt_client: Error transport connect[0m
+[0;32mI (1717951) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1717951) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1717961) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1717961) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1727971) mqtt-logs: Other event id:7[0m
+[0;31mE (1727971) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1727971) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1727971) mqtt_client: Error transport connect[0m
+[0;32mI (1727981) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1727981) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1727991) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1727991) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1738001) mqtt-logs: Other event id:7[0m
+[0;31mE (1738001) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1738001) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1738001) mqtt_client: Error transport connect[0m
+[0;32mI (1738011) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1738011) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1738021) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1738021) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1748031) mqtt-logs: Other event id:7[0m
+[0;31mE (1748031) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1748031) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1748031) mqtt_client: Error transport connect[0m
+[0;32mI (1748041) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1748041) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1748051) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1748051) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1758061) mqtt-logs: Other event id:7[0m
+[0;31mE (1758061) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1758061) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1758061) mqtt_client: Error transport connect[0m
+[0;32mI (1758071) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1758071) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1758081) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1758081) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1768091) mqtt-logs: Other event id:7[0m
+[0;31mE (1768091) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1768091) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1768091) mqtt_client: Error transport connect[0m
+[0;32mI (1768101) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1768101) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1768111) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1768111) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1778121) mqtt-logs: Other event id:7[0m
+[0;31mE (1778121) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1778121) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1778121) mqtt_client: Error transport connect[0m
+[0;32mI (1778131) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1778131) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1778141) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1778141) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1788151) mqtt-logs: Other event id:7[0m
+[0;31mE (1788151) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1788151) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1788151) mqtt_client: Error transport connect[0m
+[0;32mI (1788161) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1788161) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1788171) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1788171) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1798181) mqtt-logs: Other event id:7[0m
+[0;31mE (1798181) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1798181) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1798181) mqtt_client: Error transport connect[0m
+[0;32mI (1798191) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1798191) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1798201) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1798201) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1808211) mqtt-logs: Other event id:7[0m
+[0;31mE (1808211) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1808211) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1808211) mqtt_client: Error transport connect[0m
+[0;32mI (1808221) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1808221) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1808231) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1808231) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1818241) mqtt-logs: Other event id:7[0m
+[0;31mE (1818241) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1818241) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1818241) mqtt_client: Error transport connect[0m
+[0;32mI (1818251) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1818251) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1818261) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1818261) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1828271) mqtt-logs: Other event id:7[0m
+[0;31mE (1828271) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1828271) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1828271) mqtt_client: Error transport connect[0m
+[0;32mI (1828281) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1828281) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1828291) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1828291) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1838301) mqtt-logs: Other event id:7[0m
+[0;31mE (1838301) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1838301) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1838301) mqtt_client: Error transport connect[0m
+[0;32mI (1838311) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1838311) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1838321) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1838321) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1848331) mqtt-logs: Other event id:7[0m
+[0;31mE (1848331) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1848331) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1848331) mqtt_client: Error transport connect[0m
+[0;32mI (1848341) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1848341) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1848351) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1848351) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1858361) mqtt-logs: Other event id:7[0m
+[0;31mE (1858361) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1858361) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1858361) mqtt_client: Error transport connect[0m
+[0;32mI (1858371) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1858371) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1858381) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1858381) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1868391) mqtt-logs: Other event id:7[0m
+[0;31mE (1868391) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1868391) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1868391) mqtt_client: Error transport connect[0m
+[0;32mI (1868401) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1868401) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1868411) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1868411) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1878421) mqtt-logs: Other event id:7[0m
+[0;31mE (1878421) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1878421) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1878421) mqtt_client: Error transport connect[0m
+[0;32mI (1878431) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1878431) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1878441) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1878441) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1888451) mqtt-logs: Other event id:7[0m
+[0;31mE (1888451) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1888451) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1888451) mqtt_client: Error transport connect[0m
+[0;32mI (1888461) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1888461) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1888471) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1888471) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1898481) mqtt-logs: Other event id:7[0m
+[0;31mE (1898481) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1898481) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1898481) mqtt_client: Error transport connect[0m
+[0;32mI (1898491) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1898491) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1898501) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1898501) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1908511) mqtt-logs: Other event id:7[0m
+[0;31mE (1908511) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1908511) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1908511) mqtt_client: Error transport connect[0m
+[0;32mI (1908521) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1908521) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1908531) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1908531) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1918541) mqtt-logs: Other event id:7[0m
+[0;31mE (1918541) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1918541) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1918541) mqtt_client: Error transport connect[0m
+[0;32mI (1918551) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1918551) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1918561) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1918561) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1928571) mqtt-logs: Other event id:7[0m
+[0;31mE (1928571) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1928571) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1928571) mqtt_client: Error transport connect[0m
+[0;32mI (1928581) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1928581) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1928591) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1928591) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1938601) mqtt-logs: Other event id:7[0m
+[0;31mE (1938601) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1938601) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1938601) mqtt_client: Error transport connect[0m
+[0;32mI (1938611) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1938611) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1938621) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1938621) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1948631) mqtt-logs: Other event id:7[0m
+[0;31mE (1948631) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1948631) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1948631) mqtt_client: Error transport connect[0m
+[0;32mI (1948641) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1948641) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1948651) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1948651) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1958661) mqtt-logs: Other event id:7[0m
+[0;31mE (1958661) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1958661) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1958661) mqtt_client: Error transport connect[0m
+[0;32mI (1958671) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1958671) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1958681) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1958681) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1968691) mqtt-logs: Other event id:7[0m
+[0;31mE (1968691) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1968691) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1968691) mqtt_client: Error transport connect[0m
+[0;32mI (1968701) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1968701) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1968711) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1968711) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1978721) mqtt-logs: Other event id:7[0m
+[0;31mE (1978721) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1978721) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1978721) mqtt_client: Error transport connect[0m
+[0;32mI (1978731) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1978731) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1978741) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1978741) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1988751) mqtt-logs: Other event id:7[0m
+[0;31mE (1988751) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1988751) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1988751) mqtt_client: Error transport connect[0m
+[0;32mI (1988761) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1988761) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1988771) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1988771) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (1998781) mqtt-logs: Other event id:7[0m
+[0;31mE (1998781) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (1998781) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (1998781) mqtt_client: Error transport connect[0m
+[0;32mI (1998791) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (1998791) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (1998801) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (1998801) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2008811) mqtt-logs: Other event id:7[0m
+[0;31mE (2008811) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2008811) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2008811) mqtt_client: Error transport connect[0m
+[0;32mI (2008821) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2008821) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2008831) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2008831) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2018841) mqtt-logs: Other event id:7[0m
+[0;31mE (2018841) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2018841) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2018841) mqtt_client: Error transport connect[0m
+[0;32mI (2018851) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2018851) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2018861) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2018861) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2028871) mqtt-logs: Other event id:7[0m
+[0;31mE (2028871) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2028871) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2028871) mqtt_client: Error transport connect[0m
+[0;32mI (2028881) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2028881) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2028891) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2028891) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2038901) mqtt-logs: Other event id:7[0m
+[0;31mE (2038901) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2038901) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2038901) mqtt_client: Error transport connect[0m
+[0;32mI (2038911) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2038911) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2038921) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2038921) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2048931) mqtt-logs: Other event id:7[0m
+[0;31mE (2048931) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2048931) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2048931) mqtt_client: Error transport connect[0m
+[0;32mI (2048941) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2048941) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2048951) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2048951) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2058961) mqtt-logs: Other event id:7[0m
+[0;31mE (2058961) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2058961) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2058961) mqtt_client: Error transport connect[0m
+[0;32mI (2058971) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2058971) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2058981) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2058981) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2068991) mqtt-logs: Other event id:7[0m
+[0;31mE (2068991) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2068991) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2068991) mqtt_client: Error transport connect[0m
+[0;32mI (2069001) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2069001) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2069011) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2069011) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2079021) mqtt-logs: Other event id:7[0m
+[0;31mE (2079021) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2079021) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2079021) mqtt_client: Error transport connect[0m
+[0;32mI (2079031) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2079031) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2079041) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2079041) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2089051) mqtt-logs: Other event id:7[0m
+[0;31mE (2089051) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2089051) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2089051) mqtt_client: Error transport connect[0m
+[0;32mI (2089061) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2089061) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2089071) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2089071) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2099081) mqtt-logs: Other event id:7[0m
+[0;31mE (2099081) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2099081) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2099081) mqtt_client: Error transport connect[0m
+[0;32mI (2099091) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2099091) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2099101) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2099101) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2109111) mqtt-logs: Other event id:7[0m
+[0;31mE (2109111) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2109111) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2109111) mqtt_client: Error transport connect[0m
+[0;32mI (2109121) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2109121) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2109131) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2109131) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2119141) mqtt-logs: Other event id:7[0m
+[0;31mE (2119141) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2119141) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2119141) mqtt_client: Error transport connect[0m
+[0;32mI (2119151) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2119151) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2119161) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2119161) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2129171) mqtt-logs: Other event id:7[0m
+[0;31mE (2129171) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2129171) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2129171) mqtt_client: Error transport connect[0m
+[0;32mI (2129181) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2129181) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2129191) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2129191) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2139201) mqtt-logs: Other event id:7[0m
+[0;31mE (2139201) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2139201) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2139201) mqtt_client: Error transport connect[0m
+[0;32mI (2139211) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2139211) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2139221) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2139221) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2149231) mqtt-logs: Other event id:7[0m
+[0;31mE (2149231) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2149231) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2149231) mqtt_client: Error transport connect[0m
+[0;32mI (2149241) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2149241) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2149251) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2149251) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2159261) mqtt-logs: Other event id:7[0m
+[0;31mE (2159261) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2159261) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2159261) mqtt_client: Error transport connect[0m
+[0;32mI (2159271) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2159271) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2159281) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2159281) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2169291) mqtt-logs: Other event id:7[0m
+[0;31mE (2169291) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2169291) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2169291) mqtt_client: Error transport connect[0m
+[0;32mI (2169301) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2169301) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2169311) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2169311) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2179321) mqtt-logs: Other event id:7[0m
+[0;31mE (2179321) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2179321) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2179321) mqtt_client: Error transport connect[0m
+[0;32mI (2179331) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2179331) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2179341) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2179341) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2189351) mqtt-logs: Other event id:7[0m
+[0;31mE (2189351) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2189351) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2189351) mqtt_client: Error transport connect[0m
+[0;32mI (2189361) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2189361) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2189371) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2189371) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2199381) mqtt-logs: Other event id:7[0m
+[0;31mE (2199381) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2199381) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2199381) mqtt_client: Error transport connect[0m
+[0;32mI (2199391) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2199391) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2199401) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2199401) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2209411) mqtt-logs: Other event id:7[0m
+[0;31mE (2209411) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2209411) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2209411) mqtt_client: Error transport connect[0m
+[0;32mI (2209421) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2209421) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2209431) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2209431) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2219441) mqtt-logs: Other event id:7[0m
+[0;31mE (2219441) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2219441) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2219441) mqtt_client: Error transport connect[0m
+[0;32mI (2219451) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2219451) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2219461) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2219461) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2229471) mqtt-logs: Other event id:7[0m
+[0;31mE (2229471) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2229471) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2229471) mqtt_client: Error transport connect[0m
+[0;32mI (2229481) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2229481) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2229491) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2229491) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2239501) mqtt-logs: Other event id:7[0m
+[0;31mE (2239501) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2239501) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2239501) mqtt_client: Error transport connect[0m
+[0;32mI (2239511) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2239511) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2239521) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2239521) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2249531) mqtt-logs: Other event id:7[0m
+[0;31mE (2249531) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2249531) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2249531) mqtt_client: Error transport connect[0m
+[0;32mI (2249541) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2249541) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2249551) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2249551) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2259561) mqtt-logs: Other event id:7[0m
+[0;31mE (2259561) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2259561) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2259561) mqtt_client: Error transport connect[0m
+[0;32mI (2259571) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2259571) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2259581) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2259581) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2269591) mqtt-logs: Other event id:7[0m
+[0;31mE (2269591) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2269591) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2269591) mqtt_client: Error transport connect[0m
+[0;32mI (2269601) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2269601) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2269611) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2269611) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2279621) mqtt-logs: Other event id:7[0m
+[0;31mE (2279621) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2279621) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2279621) mqtt_client: Error transport connect[0m
+[0;32mI (2279631) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2279631) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2279641) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2279641) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2289651) mqtt-logs: Other event id:7[0m
+[0;31mE (2289651) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2289651) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2289651) mqtt_client: Error transport connect[0m
+[0;32mI (2289661) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2289661) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2289671) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2289671) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2299681) mqtt-logs: Other event id:7[0m
+[0;31mE (2299681) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2299681) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2299681) mqtt_client: Error transport connect[0m
+[0;32mI (2299691) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2299691) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2299701) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2299701) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2309711) mqtt-logs: Other event id:7[0m
+[0;31mE (2309711) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2309711) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2309711) mqtt_client: Error transport connect[0m
+[0;32mI (2309721) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2309721) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2309731) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2309731) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2319741) mqtt-logs: Other event id:7[0m
+[0;31mE (2319741) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2319741) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2319741) mqtt_client: Error transport connect[0m
+[0;32mI (2319751) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2319751) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2319761) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2319761) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2329771) mqtt-logs: Other event id:7[0m
+[0;31mE (2329771) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2329771) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2329771) mqtt_client: Error transport connect[0m
+[0;32mI (2329781) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2329781) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2329791) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2329791) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2339801) mqtt-logs: Other event id:7[0m
+[0;31mE (2339801) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2339801) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2339801) mqtt_client: Error transport connect[0m
+[0;32mI (2339811) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2339811) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2339821) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2339821) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2349831) mqtt-logs: Other event id:7[0m
+[0;31mE (2349831) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2349831) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2349831) mqtt_client: Error transport connect[0m
+[0;32mI (2349841) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2349841) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2349851) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2349851) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2359861) mqtt-logs: Other event id:7[0m
+[0;31mE (2359861) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2359861) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2359861) mqtt_client: Error transport connect[0m
+[0;32mI (2359871) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2359871) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2359881) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2359881) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2369891) mqtt-logs: Other event id:7[0m
+[0;31mE (2369891) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2369891) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2369891) mqtt_client: Error transport connect[0m
+[0;32mI (2369901) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2369901) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2369911) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2369911) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2379921) mqtt-logs: Other event id:7[0m
+[0;31mE (2379921) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2379921) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2379921) mqtt_client: Error transport connect[0m
+[0;32mI (2379931) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2379931) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2379941) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2379941) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2389951) mqtt-logs: Other event id:7[0m
+[0;31mE (2389951) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2389951) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2389951) mqtt_client: Error transport connect[0m
+[0;32mI (2389961) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2389961) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2389971) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2389971) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2399981) mqtt-logs: Other event id:7[0m
+[0;31mE (2399981) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2399981) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2399981) mqtt_client: Error transport connect[0m
+[0;32mI (2399991) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2399991) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2400001) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2400001) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2410011) mqtt-logs: Other event id:7[0m
+[0;31mE (2410011) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2410011) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2410011) mqtt_client: Error transport connect[0m
+[0;32mI (2410021) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2410021) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2410031) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2410031) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2420041) mqtt-logs: Other event id:7[0m
+[0;31mE (2420041) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2420041) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2420041) mqtt_client: Error transport connect[0m
+[0;32mI (2420051) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2420051) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2420061) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2420061) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2430071) mqtt-logs: Other event id:7[0m
+[0;31mE (2430071) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2430071) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2430071) mqtt_client: Error transport connect[0m
+[0;32mI (2430081) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2430081) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2430091) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2430091) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2440101) mqtt-logs: Other event id:7[0m
+[0;31mE (2440101) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2440101) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2440101) mqtt_client: Error transport connect[0m
+[0;32mI (2440111) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2440111) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2440121) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2440121) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2450131) mqtt-logs: Other event id:7[0m
+[0;31mE (2450131) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2450131) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2450131) mqtt_client: Error transport connect[0m
+[0;32mI (2450141) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2450141) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2450151) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2450151) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2460161) mqtt-logs: Other event id:7[0m
+[0;31mE (2460161) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2460161) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2460161) mqtt_client: Error transport connect[0m
+[0;32mI (2460171) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2460171) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2460181) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2460181) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2470191) mqtt-logs: Other event id:7[0m
+[0;31mE (2470191) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2470191) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2470191) mqtt_client: Error transport connect[0m
+[0;32mI (2470201) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2470201) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2470211) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2470211) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2480221) mqtt-logs: Other event id:7[0m
+[0;31mE (2480221) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2480221) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2480221) mqtt_client: Error transport connect[0m
+[0;32mI (2480231) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2480231) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2480241) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2480241) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2490251) mqtt-logs: Other event id:7[0m
+[0;31mE (2490251) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2490251) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2490251) mqtt_client: Error transport connect[0m
+[0;32mI (2490261) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2490261) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2490271) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2490271) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2500281) mqtt-logs: Other event id:7[0m
+[0;31mE (2500281) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2500281) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2500281) mqtt_client: Error transport connect[0m
+[0;32mI (2500291) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2500291) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2500301) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2500301) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2510311) mqtt-logs: Other event id:7[0m
+[0;31mE (2510311) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2510311) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2510311) mqtt_client: Error transport connect[0m
+[0;32mI (2510321) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2510321) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2510331) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2510331) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2520341) mqtt-logs: Other event id:7[0m
+[0;31mE (2520341) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2520341) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2520341) mqtt_client: Error transport connect[0m
+[0;32mI (2520351) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2520351) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2520361) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2520361) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2530371) mqtt-logs: Other event id:7[0m
+[0;31mE (2530371) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2530371) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2530371) mqtt_client: Error transport connect[0m
+[0;32mI (2530381) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2530381) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2530391) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2530391) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2540401) mqtt-logs: Other event id:7[0m
+[0;31mE (2540401) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2540401) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2540401) mqtt_client: Error transport connect[0m
+[0;32mI (2540411) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2540411) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2540421) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2540421) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2550431) mqtt-logs: Other event id:7[0m
+[0;31mE (2550431) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2550431) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2550431) mqtt_client: Error transport connect[0m
+[0;32mI (2550441) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2550441) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2550451) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2550451) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2560461) mqtt-logs: Other event id:7[0m
+[0;31mE (2560461) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2560461) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2560461) mqtt_client: Error transport connect[0m
+[0;32mI (2560471) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2560471) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2560481) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2560481) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2570491) mqtt-logs: Other event id:7[0m
+[0;31mE (2570491) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2570491) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2570491) mqtt_client: Error transport connect[0m
+[0;32mI (2570501) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2570501) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2570511) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2570511) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2580521) mqtt-logs: Other event id:7[0m
+[0;31mE (2580521) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2580521) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2580521) mqtt_client: Error transport connect[0m
+[0;32mI (2580531) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2580531) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2580541) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2580541) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2590551) mqtt-logs: Other event id:7[0m
+[0;31mE (2590551) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2590551) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2590551) mqtt_client: Error transport connect[0m
+[0;32mI (2590561) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2590561) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2590571) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2590571) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2600581) mqtt-logs: Other event id:7[0m
+[0;31mE (2600581) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2600581) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2600581) mqtt_client: Error transport connect[0m
+[0;32mI (2600591) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2600591) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2600601) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2600601) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2610611) mqtt-logs: Other event id:7[0m
+[0;31mE (2610611) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2610611) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2610611) mqtt_client: Error transport connect[0m
+[0;32mI (2610621) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2610621) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2610631) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2610631) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2620641) mqtt-logs: Other event id:7[0m
+[0;31mE (2620641) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2620641) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2620641) mqtt_client: Error transport connect[0m
+[0;32mI (2620651) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2620651) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2620661) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2620661) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2630671) mqtt-logs: Other event id:7[0m
+[0;31mE (2630671) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2630671) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2630671) mqtt_client: Error transport connect[0m
+[0;32mI (2630681) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2630681) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2630691) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2630691) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2640701) mqtt-logs: Other event id:7[0m
+[0;31mE (2640701) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2640701) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2640701) mqtt_client: Error transport connect[0m
+[0;32mI (2640711) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2640711) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2640721) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2640721) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2650731) mqtt-logs: Other event id:7[0m
+[0;31mE (2650731) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2650731) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2650731) mqtt_client: Error transport connect[0m
+[0;32mI (2650741) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2650741) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2650751) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2650751) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2660761) mqtt-logs: Other event id:7[0m
+[0;31mE (2660761) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2660761) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2660761) mqtt_client: Error transport connect[0m
+[0;32mI (2660771) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2660771) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2660781) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2660781) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2670791) mqtt-logs: Other event id:7[0m
+[0;31mE (2670791) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2670791) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2670791) mqtt_client: Error transport connect[0m
+[0;32mI (2670801) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2670801) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2670811) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2670811) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2680821) mqtt-logs: Other event id:7[0m
+[0;31mE (2680821) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2680821) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2680821) mqtt_client: Error transport connect[0m
+[0;32mI (2680831) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2680831) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2680841) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2680841) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2690851) mqtt-logs: Other event id:7[0m
+[0;31mE (2690851) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2690851) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2690851) mqtt_client: Error transport connect[0m
+[0;32mI (2690861) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2690861) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2690871) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2690871) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2700881) mqtt-logs: Other event id:7[0m
+[0;31mE (2700881) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2700881) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2700881) mqtt_client: Error transport connect[0m
+[0;32mI (2700891) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2700891) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2700901) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2700901) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2710911) mqtt-logs: Other event id:7[0m
+[0;31mE (2710911) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2710911) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2710911) mqtt_client: Error transport connect[0m
+[0;32mI (2710921) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2710921) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2710931) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2710931) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2720941) mqtt-logs: Other event id:7[0m
+[0;31mE (2720941) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2720941) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2720941) mqtt_client: Error transport connect[0m
+[0;32mI (2720951) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2720951) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2720961) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2720961) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2730971) mqtt-logs: Other event id:7[0m
+[0;31mE (2730971) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2730971) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2730971) mqtt_client: Error transport connect[0m
+[0;32mI (2730981) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2730981) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2730991) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2730991) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2741001) mqtt-logs: Other event id:7[0m
+[0;31mE (2741001) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2741001) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2741001) mqtt_client: Error transport connect[0m
+[0;32mI (2741011) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2741011) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2741021) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2741021) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2751031) mqtt-logs: Other event id:7[0m
+[0;31mE (2751031) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2751031) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2751031) mqtt_client: Error transport connect[0m
+[0;32mI (2751041) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2751041) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2751051) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2751051) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2761061) mqtt-logs: Other event id:7[0m
+[0;31mE (2761061) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2761061) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2761061) mqtt_client: Error transport connect[0m
+[0;32mI (2761071) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2761071) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2761081) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2761081) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2771091) mqtt-logs: Other event id:7[0m
+[0;31mE (2771091) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2771091) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2771091) mqtt_client: Error transport connect[0m
+[0;32mI (2771101) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2771101) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2771111) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2771111) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2781121) mqtt-logs: Other event id:7[0m
+[0;31mE (2781121) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2781121) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2781121) mqtt_client: Error transport connect[0m
+[0;32mI (2781131) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2781131) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2781141) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2781141) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2791151) mqtt-logs: Other event id:7[0m
+[0;31mE (2791151) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[0;31mE (2791151) transport_base: Failed to open a new connection: 32772[0m
+[0;31mE (2791151) mqtt_client: Error transport connect[0m
+[0;32mI (2791161) mqtt-logs: MQTT_EVENT_ERROR[0m
+[0;31mE (2791161) mqtt-logs: Last error reported from esp-tls: 0x8004[0m
+[0;32mI (2791171) mqtt-logs: Last errno string (Success)[0m
+[0;32mI (2791171) mqtt-logs: MQTT_EVENT_DISCONNECTED[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15540
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time May  7 2024 20:15:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2b064h (176228) map[0m
+[0;32mI (165) esp_image: segment 1: paddr=0003b08c vaddr=3ffb0000 size=03db0h ( 15792) load[0m
+[0;32mI (171) esp_image: segment 2: paddr=0003ee44 vaddr=40080000 size=011d4h (  4564) load[0m
+[0;32mI (173) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a03ach (656300) map[0m
+[0;32mI (404) esp_image: segment 4: paddr=000e03d4 vaddr=400811d4 size=185b0h ( 99760) load[0m
+[0;32mI (456) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (456) boot: Disabling RNG early entropy source...[0m
+[0;32mI (467) cpu_start: Multicore app[0m
+[0;32mI (476) cpu_start: Pro cpu start user code[0m
+[0;32mI (476) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (476) cpu_start: Application information:[0m
+[0;32mI (479) cpu_start: Project name:     mqtt-tcp[0m
+[0;32mI (484) cpu_start: App version:      1[0m
+[0;32mI (489) cpu_start: Compile time:     May 15 2024 11:39:57[0m
+[0;32mI (495) cpu_start: ELF file SHA256:  acd2c10e1...[0m
+[0;32mI (500) cpu_start: ESP-IDF:          v5.2.1[0m
+[0;32mI (505) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (510) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (514) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (519) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (527) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (532) heap_init: At 3FFB8500 len 00027B00 (158 KiB): DRAM[0m
+[0;32mI (539) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (545) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (552) heap_init: At 40099784 len 0000687C (26 KiB): IRAM[0m
+[0;32mI (559) spi_flash: detected chip: generic[0m
+[0;32mI (562) spi_flash: flash io: dio[0m
+[0;33mW (566) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (580) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (591) main_task: Started on CPU0[0m
+[0;32mI (601) main_task: Calling app_main()[0m
+[0;32mI (601) mqtt-logs: [APP] Startup..[0m
+[0;32mI (601) mqtt-logs: [APP] Free memory: 277584 bytes[0m
+[0;32mI (601) mqtt-logs: [APP] IDF version: v5.2.1[0m
+[0;32mI (631) example_connect: Start example_connect.[0m
+I (641) wifi:wifi driver task: 3ffc0058, prio:23, stack:6656, core=0
+I (641) wifi:wifi firmware version: a9f5b59
+I (641) wifi:wifi certification version: v7.0
+I (641) wifi:config NVS flash: enabled
+I (641) wifi:config nano formating: disabled
+I (651) wifi:Init data frame dynamic rx buffer num: 32
+I (651) wifi:Init static rx mgmt buffer num: 5
+I (651) wifi:Init management short buffer num: 32
+I (661) wifi:Init dynamic tx buffer num: 32
+I (661) wifi:Init static rx buffer size: 1600
+I (671) wifi:Init static rx buffer num: 10
+I (671) wifi:Init dynamic rx buffer num: 32
+[0;32mI (681) wifi_init: rx ba win: 6[0m
+[0;32mI (681) wifi_init: tcpip mbox: 32[0m
+[0;32mI (681) wifi_init: udp mbox: 6[0m
+[0;32mI (691) wifi_init: tcp mbox: 6[0m
+[0;32mI (691) wifi_init: tcp tx win: 5760[0m
+[0;32mI (691) wifi_init: tcp rx win: 5760[0m
+[0;32mI (701) wifi_init: tcp mss: 1440[0m
+[0;32mI (701) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (711) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (711) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+I (811) wifi:mode : sta (c8:f0:9e:7b:77:c4)
+I (811) wifi:enable tsf
+[0;32mI (811) example_connect: Connecting to Samsung...[0m
+[0;32mI (821) example_connect: Waiting for IP(s)[0m
+I (3231) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (3481) wifi:state: init -> auth (b0)
+I (3531) wifi:state: auth -> assoc (0)
+I (3541) wifi:state: assoc -> run (10)
+I (3581) wifi:connected with Samsung, aid = 1, channel 11, BW20, bssid = 12:59:7c:d1:8b:cd
+I (3581) wifi:security: WPA2-PSK, phy: bgn, rssi: -37
+I (3581) wifi:pm start, type: 1
+
+I (3581) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (3661) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us
+I (3661) wifi:AP's beacon interval = 102400 us, DTIM period = 2
+[0;32mI (4591) esp_netif_handlers: example_netif_sta ip: 192.168.159.12, mask: 255.255.255.0, gw: 192.168.159.50[0m
+[0;32mI (4591) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.159.12[0m
+[0;32mI (4631) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:caf0:9eff:fe7b:77c4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (4631) example_common: Connected to example_netif_sta[0m
+[0;32mI (4641) example_common: - IPv4 address: 192.168.159.12,[0m
+[0;32mI (4641) example_common: - IPv6 address: fe80:0000:0000:0000:caf0:9eff:fe7b:77c4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (4651) mqtt-logs: Other event id:7[0m
+[0;32mI (4661) rc522: Initialized (firmware v2.0)[0m
+[0;32mI (4671) main_task: Returned from app_main()[0m
+I (5301) wifi:<ba-add>idx:0 (ifx:0, 12:59:7c:d1:8b:cd), tid:0, ssn:3, winSize:64
+I (5631) wifi:<ba-add>idx:1 (ifx:0, 12:59:7c:d1:8b:cd), tid:1, ssn:0, winSize:64
+[0;32mI (5921) mqtt-logs: MQTT_EVENT_CONNECTED[0m
+[0;32mI (5921) mqtt-logs: se publicó el mensaje, msg_id=43548[0m
+[0;32mI (5921) mqtt-logs: Suscrito correctamente, msg_id=10486[0m
+[0;32mI (6121) mqtt-logs: MQTT_EVENT_PUBLISHED, msg_id=43548[0m
+[0;32mI (6531) mqtt-logs: MQTT_EVENT_SUBSCRIBED, msg_id=10486[0m
+[0;32mI (6531) mqtt-logs: sent publish successful, msg_id=0[0m
+[0;32mI (13231) rc522-logs: Tarjeta escaneada (sn: 142605371045)[0m
+[0;33mW (13231) event: handler already registered, overwriting[0m

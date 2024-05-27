@@ -1,0 +1,138 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM6 instead...[0m
+[0;33m--- esp-idf-monitor 1.4.0 on \\.\COM6 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33mMultiple decode errors occured: Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40081a15: panicHandler at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/port/panic_handler.c:217
+[0m
+[0;33m0x400803c0: _DoubleExceptionVector at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/xtensa/xtensa_vectors.S:564
+[0m
+[0;33m0x400e278f: task_wdt_timeout_handling at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/task_wdt/task_wdt.c:441
+0x400e2b54: task_wdt_isr at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/task_wdt/task_wdt.c:515
+0x40083639: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/xtensa/xtensa_vectors.S:1240
+0x4011aa35: scan_parse_beacon at ??:?
+[0m
+[0;33m0x400e278f: task_wdt_timeout_handling at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/task_wdt/task_wdt.c:441
+0x400e2b54: task_wdt_isr at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/task_wdt/task_wdt.c:515
+0x40083639: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/xtensa/xtensa_vectors.S:1240
+0x4011aa35: scan_parse_beacon at ??:?
+[0m
+[0;33m0x400e278f: task_wdt_timeout_handling at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/task_wdt/task_wdt.c:441
+0x400e2b54: task_wdt_isr at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/task_wdt/task_wdt.c:515
+0x40083639: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/xtensa/xtensa_vectors.S:1240
+0x4011aa35: scan_parse_beacon at ??:?
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40099714: _xt_context_save at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/xtensa/xtensa_context.S:217
+[0m
+[0;33m0x400996be: _xt_context_save at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/xtensa/xtensa_context.S:191
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x400d34a6: panic_handler at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/port/panic_handler.c:138 (discriminator 3)
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x400d34a6: panic_handler at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/port/panic_handler.c:138 (discriminator 3)
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40081a15: panicHandler at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/port/panic_handler.c:217
+[0m
+[0;33m0x400d34ec: panic_handler at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/port/panic_handler.c:156
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40081a15: panicHandler at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/port/panic_handler.c:217
+[0m
+[0;33m0x400d2ec4: esp_panic_handler_reconfigure_wdts at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/panic.c:186
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x400d34a6: panic_handler at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/port/panic_handler.c:138 (discriminator 3)
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x400d34a6: panic_handler at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/port/panic_handler.c:138 (discriminator 3)
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x400803c0: _DoubleExceptionVector at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/xtensa/xtensa_vectors.S:564
+[0m
+[0;33m0x40081a15: panicHandler at C:/Espressif/frameworks/esp-idf-v5.2.1-4/components/esp_system/port/panic_handler.c:217
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33mTo exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0;33mTo exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0;33mTo exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0;33mTo exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0;33mTo exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0;33mTo exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0;33mTo exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[1;31m--- unknown menu character Ctrl+Z --[0m
+[0m
+Traceback (most recent call last):
+  File "C:\Espressif\frameworks\esp-idf-v5.2.1-4\tools/idf_monitor.py", line 11, in <module>
+    sys.exit(subprocess.run([sys.executable, '-m', 'esp_idf_monitor'] + sys.argv[1:]).returncode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "subprocess.py", line 550, in run
+  File "subprocess.py", line 1199, in communicate
+  File "subprocess.py", line 1262, in wait
+  File "subprocess.py", line 1543, in _wait
+KeyboardInterrupt
