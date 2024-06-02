@@ -1,12 +1,3 @@
-/* MQTT (over TCP) Example
-
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
-
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
-*/
-
 #include <stdio.h>
 #include <stdint.h>
 #include <stddef.h>
@@ -27,28 +18,27 @@
 #include "lwip/dns.h"
 #include "lwip/netdb.h"
 
-
 #include "esp_log.h"
 #include "mqtt_client.h"
 
-//includes para el teclado matricial
+// Includes para el teclado matricial
 #include "keyboard.h"
 
-//includes para el rc522
+// Includes para el rc522
 #include <inttypes.h>
 #include "rc522.h"
 
-//includes para el LCD
+// Includes para el LCD
 #include "st7789.h"
 #include "fontx.h"
 
-
+// Includes para el Servo
+#include "driver/mcpwm.h"
+#include "soc/mcpwm_periph.h"
 
 static esp_mqtt_client_handle_t client = NULL;  // Variable global para almacenar el cliente MQTT
 
-
 static const char *TAG = "mqtt-logs";
-
 static const char* TAG1 = "rc522-logs";
 static rc522_handle_t scanner;
 
@@ -68,6 +58,24 @@ FontDef Font24 = { Font24_Table, 17, 24 };
 TFT_t dev;
 
 //------------------------------------------funciones para controlar servo-------------------------------
+// Función para inicializar GPIO para MCPWM
+static void mcpwm_example_gpio_initialize() {
+    printf("Inicializando GPIO para control de servomotor con MCPWM...\n");
+    mcpwm_gpio_init(MCPWM_UNIT_0, MCPWM0A, 2); // Configura GPIO 2 como PWM0A
+}
+
+// Función para convertir ángulo a ancho de pulso
+static uint32_t servo_angle_to_duty_us(uint32_t angle) {
+    // Calcula el ancho de pulso en microsegundos
+    return (angle * (2400 - 600) / 180) + 600;
+}
+
+// Función para mover el servo
+void move_servo(uint32_t angle) {
+    uint32_t duty_us = servo_angle_to_duty_us(angle);
+    mcpwm_set_duty_in_us(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, duty_us);
+    vTaskDelay(pdMS_TO_TICKS(1000)); // Esperar 1 segundo para que el servo se mueva
+}
 
 //------------------------------------------funciones para display lcd-------------------------------
 void LCD_DrawChar(uint16_t x, uint16_t y, char c, FontDef *font, uint16_t color) {
@@ -122,10 +130,14 @@ void access_handler(const char *response, int length) {
             ESP_LOGI(TAG1, "Acceso permitido");
             break;
         case 101:
-            ESP_LOGI(TAG1, "No autorizado");
+            ESP_LOGI(TAG1, "Cofre abierto");
+            move_servo(170); // Mover el servo a 170 grados
+            vTaskDelay(pdMS_TO_TICKS(15000)); // Esperar 15 segundos
+            move_servo(0); // Mover el servo de regreso a 0 grados
             break;    
         case 100:
-            ESP_LOGI(TAG1, "Cofre abierto");
+            ESP_LOGI(TAG1, "No autorizado");
+            
             break;
         default:
             ESP_LOGI(TAG1, "Código no reconocido");
@@ -133,77 +145,61 @@ void access_handler(const char *response, int length) {
     }
 }
 
-
 //------------------------------------------funciones para Mqtt-------------------------------
-static void log_error_if_nonzero(const char *message, int error_code)
-{
+static void log_error_if_nonzero(const char *message, int error_code) {
     if (error_code != 0) {
         ESP_LOGE(TAG, "Last error %s: 0x%x", message, error_code);
     }
 }
 
-/*
- * @brief Event handler registered to receive MQTT events
- *
- *  This function is called by the MQTT client event loop.
- *
- * @param handler_args user data registered to the event.
- * @param base Event base for the handler(always MQTT Base in this example).
- * @param event_id The id for the received event.
- * @param event_data The data for the event, esp_mqtt_event_handle_t.
- */
-static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)
-{
+static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
     ESP_LOGD(TAG, "Event dispatched from event loop base=%s, event_id=%" PRIi32 "", base, event_id);
     esp_mqtt_event_handle_t event = event_data;
     esp_mqtt_client_handle_t client = event->client;
     int msg_id;
 
-
     switch ((esp_mqtt_event_id_t)event_id) {
-    case MQTT_EVENT_CONNECTED:
-        ESP_LOGI(TAG, "MQTT_EVENT_CONNECTED");
-        msg_id = esp_mqtt_client_publish(client, "/cntrlaxs/solicitud", "Dispositivo 1 conectado", 0, 1, 0);
-        ESP_LOGI(TAG, "se publicó el mensaje, msg_id=%d", msg_id);
-        msg_id = esp_mqtt_client_subscribe(client, "/cntrlaxs/respuesta", 1);
-        ESP_LOGI(TAG, "Suscrito correctamente, msg_id=%d", msg_id);
-        break;
-    case MQTT_EVENT_DISCONNECTED:
-        ESP_LOGI(TAG, "MQTT_EVENT_DISCONNECTED");
-        break;
-    case MQTT_EVENT_SUBSCRIBED:
-        ESP_LOGI(TAG, "MQTT_EVENT_SUBSCRIBED, msg_id=%d", event->msg_id);
-        break;
-    case MQTT_EVENT_UNSUBSCRIBED:
-        ESP_LOGI(TAG, "MQTT_EVENT_UNSUBSCRIBED, msg_id=%d", event->msg_id);
-        break;
-    case MQTT_EVENT_PUBLISHED:
-        ESP_LOGI(TAG, "MQTT_EVENT_PUBLISHED, msg_id=%d", event->msg_id);
-        break;
-    case MQTT_EVENT_DATA:
-        ESP_LOGI(TAG, "MQTT_EVENT_DATA");  // acá se reciben los msjs mqtt
-        printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
-        printf("DATA=%.*s\r\n", event->data_len, event->data);
-        access_handler(event->data, event->data_len);
-        break;
-    case MQTT_EVENT_ERROR:
-        ESP_LOGI(TAG, "MQTT_EVENT_ERROR");
-        if (event->error_handle->error_type == MQTT_ERROR_TYPE_TCP_TRANSPORT) {
-            log_error_if_nonzero("reported from esp-tls", event->error_handle->esp_tls_last_esp_err);
-            log_error_if_nonzero("reported from tls stack", event->error_handle->esp_tls_stack_err);
-            log_error_if_nonzero("captured as transport's socket errno",  event->error_handle->esp_transport_sock_errno);
-            ESP_LOGI(TAG, "Last errno string (%s)", strerror(event->error_handle->esp_transport_sock_errno));
-
-        }
-        break;
-    default:
-        ESP_LOGI(TAG, "Other event id:%d", event->event_id);
-        break;
+        case MQTT_EVENT_CONNECTED:
+            ESP_LOGI(TAG, "MQTT_EVENT_CONNECTED");
+            msg_id = esp_mqtt_client_publish(client, "/cntrlaxs/solicitud", "Dispositivo 1 conectado", 0, 1, 0);
+            ESP_LOGI(TAG, "se publicó el mensaje, msg_id=%d", msg_id);
+            msg_id = esp_mqtt_client_subscribe(client, "/cntrlaxs/respuesta", 1);
+            ESP_LOGI(TAG, "Suscrito correctamente, msg_id=%d", msg_id);
+            break;
+        case MQTT_EVENT_DISCONNECTED:
+            ESP_LOGI(TAG, "MQTT_EVENT_DISCONNECTED");
+            break;
+        case MQTT_EVENT_SUBSCRIBED:
+            ESP_LOGI(TAG, "MQTT_EVENT_SUBSCRIBED, msg_id=%d", event->msg_id);
+            break;
+        case MQTT_EVENT_UNSUBSCRIBED:
+            ESP_LOGI(TAG, "MQTT_EVENT_UNSUBSCRIBED, msg_id=%d", event->msg_id);
+            break;
+        case MQTT_EVENT_PUBLISHED:
+            ESP_LOGI(TAG, "MQTT_EVENT_PUBLISHED, msg_id=%d", event->msg_id);
+            break;
+        case MQTT_EVENT_DATA:
+            ESP_LOGI(TAG, "MQTT_EVENT_DATA");  // acá se reciben los msjs mqtt
+            printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
+            printf("DATA=%.*s\r\n", event->data_len, event->data);
+            access_handler(event->data, event->data_len);
+            break;
+        case MQTT_EVENT_ERROR:
+            ESP_LOGI(TAG, "MQTT_EVENT_ERROR");
+            if (event->error_handle->error_type == MQTT_ERROR_TYPE_TCP_TRANSPORT) {
+                log_error_if_nonzero("reported from esp-tls", event->error_handle->esp_tls_last_esp_err);
+                log_error_if_nonzero("reported from tls stack", event->error_handle->esp_tls_stack_err);
+                log_error_if_nonzero("captured as transport's socket errno",  event->error_handle->esp_transport_sock_errno);
+                ESP_LOGI(TAG, "Last errno string (%s)", strerror(event->error_handle->esp_transport_sock_errno));
+            }
+            break;
+        default:
+            ESP_LOGI(TAG, "Other event id:%d", event->event_id);
+            break;
     }
 }
 
-void mqtt_publish_message(const char *topic, const char *message)
-{
+void mqtt_publish_message(const char *topic, const char *message) {
     int msg_id = esp_mqtt_client_publish(client, topic, message, 0, 1, 0);
     if (msg_id != -1) {
         ESP_LOGI(TAG, "Mensaje enviado correctamente, msg_id=%d", msg_id);
@@ -212,42 +208,33 @@ void mqtt_publish_message(const char *topic, const char *message)
     }
 }
 
-static void mqtt_app_start(void)
-{
-    
+static void mqtt_app_start(void) {
     esp_mqtt_client_config_t mqtt_cfg = {
         .broker.address.uri = CONFIG_BROKER_URL,
     };
 
-     client = esp_mqtt_client_init(&mqtt_cfg);
-    /* The last argument may be used to pass data to the event handler, in this example mqtt_event_handler */
+    client = esp_mqtt_client_init(&mqtt_cfg);
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
     esp_mqtt_client_start(client);
-    //esp_mqtt_client_subscribe(client, "/cntrlaxs/", 1);
 }
 
-
 //----------------------------------------------------------------funciones para rc522----------------------------------------------------------------------------------
-
-static void rc522_handler(void* arg, esp_event_base_t base, int32_t event_id, void* event_data)
-{
+static void rc522_handler(void* arg, esp_event_base_t base, int32_t event_id, void* event_data) {
     rc522_event_data_t* data = (rc522_event_data_t*) event_data;
 
     switch(event_id) {
         case RC522_EVENT_TAG_SCANNED: {
-                rc522_tag_t* tag = (rc522_tag_t*) data->ptr;
-                ESP_LOGI(TAG1, "Tarjeta escaneada (sn: %" PRIu64 ")", tag->serial_number);
-
+            rc522_tag_t* tag = (rc522_tag_t*) data->ptr;
+            ESP_LOGI(TAG1, "Tarjeta escaneada (sn: %" PRIu64 ")", tag->serial_number);
 
             codigo_tarjeta = tag->serial_number;    // Obtener el valor de la variable global codigo_tarjeta
             char codigo_str[21]; // Buffer para almacenar el valor de la tarjeta como cadena
             snprintf(codigo_str, sizeof(codigo_str), "%" PRIu64, codigo_tarjeta); // Convertir el valor de la tarjeta a cadena
             
             // Publicar el mensaje a través de MQTT
-            mqtt_publish_message("/cntrlaxs/solicitud", codigo_str);
-
-            }
-            break;
+            mqtt_publish_message("/cntrlaxs/solicitud/card", codigo_str);
+        }
+        break;
     }
 }
 
@@ -289,7 +276,7 @@ void keyboard_task(void *pvParameter) {
                 // Verificar si se ha ingresado el número completo
                 if (digit_count == 6) {
                     // Publicar el código ingresado a través de MQTT
-                    mqtt_publish_message("/cntrlaxs/code", code_buffer);
+                    mqtt_publish_message("/cntrlaxs/solicitud/code", code_buffer);
                     ESP_LOGI(TAG, "Código completo ingresado: %s", code_buffer);
                     // Limpiar el buffer y el contador de dígitos
                     memset(code_buffer, 0, sizeof(code_buffer));
@@ -311,11 +298,8 @@ void keyboard_task(void *pvParameter) {
     }
 }
 
-
-
 //------------------------------------------funcion principal-------------------------------
-void app_main(void)
-{
+void app_main(void) {
     ESP_LOGI(TAG, "[APP] Startup..");
     ESP_LOGI(TAG, "[APP] Free memory: %" PRIu32 " bytes", esp_get_free_heap_size());
     ESP_LOGI(TAG, "[APP] IDF version: %s", esp_get_idf_version());
@@ -332,16 +316,22 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
 
-    /* This helper function configures Wi-Fi or Ethernet, as selected in menuconfig.
-     * Read "Establishing Wi-Fi or Ethernet Connection" section in
-     * examples/protocols/README.md for more information about this function.
-     */
     ESP_ERROR_CHECK(example_connect());
     
-    codigo_tarjeta=1234567890;// esto es de prueba
+    // Inicializa GPIO servo
+    mcpwm_example_gpio_initialize();
 
-    //----------------------------LCD--------------------------
+    // Configura MCPWM
+    mcpwm_config_t pwm_config = {
+        .frequency = 50,  // Frecuencia de 50 Hz para servomotores
+        .cmpr_a = 0,      // Ciclo de trabajo inicial del 0%
+        .cmpr_b = 0,
+        .counter_mode = MCPWM_UP_COUNTER,
+        .duty_mode = MCPWM_DUTY_MODE_0,
+    };
+    mcpwm_init(MCPWM_UNIT_0, MCPWM_TIMER_0, &pwm_config);
     
+    //----------------------------LCD--------------------------
     // Define the GPIOs for your SPI interface
     int16_t GPIO_MOSI = 14;
     int16_t GPIO_SCLK = 27;
@@ -353,21 +343,12 @@ void app_main(void)
     // Initialize the SPI interface
     spi_master_init(&dev, GPIO_MOSI, GPIO_SCLK, GPIO_CS, GPIO_DC, GPIO_RESET, GPIO_BL);
 
-  
-
-   // Initialize the display with the specified width, height, and offsets
+    // Initialize the display with the specified width, height, and offsets
     lcdInit(&dev, 240, 240, 0, 0); 
 
-    // Puedes usar ahora la estructura dev para dibujar en la pantalla, por ejemplo:
     lcdFillScreen(&dev, GREEN);
-    //lcdDrawString(&dev, fx32G, 0, 0, (uint8_t*)"Hello, World!", BLACK);
     LCD_DrawString(10, 10, "Hola, Mundo!", &Font24, RED);
-/*	uint16_t xpos = 120;
-	uint16_t ypos = 120;
-	for(int i=5;i<120;i=i+5) {
-		lcdDrawCircle(&dev, xpos, ypos, i, RED);
-	}
-*/
+
     rc522_config_t config = {
         .spi.host = VSPI_HOST,
         .spi.miso_gpio = 18,
@@ -383,5 +364,4 @@ void app_main(void)
 
     keyboard_init();
     xTaskCreate(&keyboard_task, "keyboard_task", 2048, NULL, 5, NULL);
-    
 }
