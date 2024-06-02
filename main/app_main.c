@@ -256,9 +256,17 @@ void keyboard_task(void *pvParameter) {
     int digit_count = 0;          // Contador de dígitos ingresados
     char code_buffer[7] = {0};    // Buffer para almacenar el código ingresado (6 dígitos + terminador nulo)
     TickType_t last_key_time = 0; // Registro del tiempo del último dígito ingresado
+    const TickType_t debounce_delay = 50 / portTICK_PERIOD_MS; // Tiempo de debounce
+    const TickType_t timeout_delay = 15000 / portTICK_PERIOD_MS; // Tiempo de espera de 15 segundos
 
     while (1) {
         if (keyboard_check()) {
+            // Implementar debounce
+            if (xTaskGetTickCount() - last_key_time < debounce_delay) {
+                vTaskDelay(debounce_delay);  // Esperar el tiempo de debounce
+                continue;
+            }
+
             char key = keyboard_get_char();
             ESP_LOGI(TAG, "Tecla presionada: %c", key);
 
@@ -267,12 +275,14 @@ void keyboard_task(void *pvParameter) {
                 // Almacenar el dígito en el buffer
                 code_buffer[digit_count++] = key;
                 last_key_time = xTaskGetTickCount(); // Actualizar el tiempo del último dígito ingresado
+                ESP_LOGI(TAG, "Código ingresado hasta ahora: %s", code_buffer);
             }
             // Si se presiona el botón de cancelar
             else if (key == '*') {
                 // Reiniciar el buffer y el contador de dígitos
                 memset(code_buffer, 0, sizeof(code_buffer));
                 digit_count = 0;
+                ESP_LOGI(TAG, "Código cancelado");
             }
             // Si se presiona el botón de terminar
             else if (key == '#' && digit_count > 0) {
@@ -280,18 +290,27 @@ void keyboard_task(void *pvParameter) {
                 if (digit_count == 6) {
                     // Publicar el código ingresado a través de MQTT
                     mqtt_publish_message("/cntrlaxs/code", code_buffer);
-                } else {
-                    // Si no se ha ingresado el número completo, esperar 7 segundos
-                    vTaskDelayUntil(&last_key_time, 7000 / portTICK_PERIOD_MS);
+                    ESP_LOGI(TAG, "Código completo ingresado: %s", code_buffer);
                     // Limpiar el buffer y el contador de dígitos
                     memset(code_buffer, 0, sizeof(code_buffer));
                     digit_count = 0;
+                    ESP_LOGI(TAG, "Memoria limpia");
                 }
             }
         }
+
+        // Verificar si el tiempo de espera ha excedido los 15 segundos
+        if (digit_count > 0 && (xTaskGetTickCount() - last_key_time) > timeout_delay) {
+            // Limpiar el buffer y el contador de dígitos
+            memset(code_buffer, 0, sizeof(code_buffer));
+            digit_count = 0;
+            ESP_LOGI(TAG, "Tiempo de espera excedido, memoria limpia");
+        }
+
         vTaskDelay(10 / portTICK_PERIOD_MS);  // Pequeño retraso para evitar la sobrecarga de la CPU
     }
 }
+
 
 
 //------------------------------------------funcion principal-------------------------------
@@ -334,13 +353,7 @@ void app_main(void)
     // Initialize the SPI interface
     spi_master_init(&dev, GPIO_MOSI, GPIO_SCLK, GPIO_CS, GPIO_DC, GPIO_RESET, GPIO_BL);
 
-   // Declarar e inicializar la fuente
-   // FontxFile fx[2];
-    //FontxFile fx32G[2];
-
-    
-    //(fx, "/spiffs/font/ILGH24XB.FNT", "/spiffs/font/ILGZ24XB.FNT"); // Ajustar rutas según sea necesario
-	//InitFontx(fx32G,"/spiffs/ILGH32XB.FNT",""); // 16x32Dot Gothic
+  
 
    // Initialize the display with the specified width, height, and offsets
     lcdInit(&dev, 240, 240, 0, 0); 
@@ -370,8 +383,5 @@ void app_main(void)
 
     keyboard_init();
     xTaskCreate(&keyboard_task, "keyboard_task", 2048, NULL, 5, NULL);
-
-  // Ejemplo de uso: imprimir el primer byte de la tabla de fuentes
-    printf("Primer byte de Font24_Table: 0x%02X\n", Font24_Table[0]);// Ejemplo de uso: imprimir el primer byte de la tabla de fuentes
     
 }

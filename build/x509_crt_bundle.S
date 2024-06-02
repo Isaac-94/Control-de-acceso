@@ -1,4 +1,4 @@
-/* * Data converted from C:/Users/Usuario/Documents/esp32s3/mqtt-tcp/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from C:/Users/Isaac/Documents/prog/IoT_sitemas_embebidos/2024/Programacion_de_SE/mqtt-tcp/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

@@ -8,8 +8,8 @@
 
 #define COL_1 GPIO_NUM_33
 #define COL_2 GPIO_NUM_32
-#define COL_3 GPIO_NUM_35
-#define COL_4 GPIO_NUM_34
+#define COL_3 GPIO_NUM_21
+#define COL_4 GPIO_NUM_0
 
 #define ROW_1 GPIO_NUM_4
 #define ROW_2 GPIO_NUM_13
@@ -31,6 +31,8 @@ char const KEYS[NUM_ROW][NUM_COL] = {
 };
 
 static char _last_key = 0;
+static char _last_checked_key = 0; // Para almacenar la última tecla verificada
+static TickType_t _last_key_time = 0; // Para almacenar el tiempo de la última verificación
 
 static void _columns_config(void) {
     gpio_config_t col_config;
@@ -64,14 +66,23 @@ char keyboard_get_char() {
 }
 
 int keyboard_check() {
+    const TickType_t debounce_delay = 300  / portTICK_PERIOD_MS; // Tiempo de debounce
+
     for (uint8_t row = 0; row < NUM_ROW; row++) {
         gpio_set_level(rows[row], 0);
         vTaskDelay(1 / portTICK_PERIOD_MS);  // Pequeño retraso para permitir la estabilización
         for (uint8_t col = 0; col < NUM_COL; col++) {
-            if (!gpio_get_level(cols[col])) {            
-                _last_key = KEYS[row][col];
-                gpio_set_level(rows[row], 1);  // Restaurar el nivel de la fila
-                return 1;
+            if (!gpio_get_level(cols[col])) {
+                char current_key = KEYS[row][col];
+                TickType_t current_time = xTaskGetTickCount();
+
+                if (current_key != _last_checked_key || (current_time - _last_key_time) > debounce_delay) {
+                    _last_key = current_key;
+                    _last_checked_key = current_key;
+                    _last_key_time = current_time;
+                    gpio_set_level(rows[row], 1);  // Restaurar el nivel de la fila
+                    return 1;
+                }
             }
         }
         gpio_set_level(rows[row], 1);
