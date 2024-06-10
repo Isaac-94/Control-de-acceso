@@ -49,15 +49,16 @@ Este proyecto está diseñado para gestionar el acceso a un cofre de seguridad o
 ```bash
 git clone https://github.com/tuusuario/tu-repositorio.git
 cd tu-repositorio
+```
 
 2. Configurar el Entorno de Desarrollo
 Sigue la guía oficial de ESP-IDF para configurar el entorno de desarrollo.
 
 3. Configurar MQTT
 Edita sdkconfig para configurar la URL de tu broker MQTT:
-
+```bash
 CONFIG_BROKER_URL="mqtt://broker.url"
-
+```
 4. Configurar Pines
 Ajusta los pines en tu código según tu hardware:
 
