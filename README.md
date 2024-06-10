@@ -47,8 +47,8 @@ Este proyecto está diseñado para gestionar el acceso a un cofre de seguridad o
 ### 1. Clonar el Repositorio
 
 ```bash
-git clone https://github.com/tuusuario/tu-repositorio.git
-cd tu-repositorio
+git clone https://github.com/Isaac-94/Control-de-acceso.git
+cd Control-de-acceso
 ```
 
 2. Configurar el Entorno de Desarrollo
