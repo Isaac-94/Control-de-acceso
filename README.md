@@ -109,5 +109,4 @@ Creado por @Isaac-94
 8. **Autor**: Detalles sobre el creador del proyecto.
 9. **Imágenes**: Sección para agregar imágenes que describan el hardware y conexiones del proyecto.
 
-Este README proporciona una guía completa para usuarios nuevos y ayuda a explicar cómo configurar y usar el sistema. Puedes agregar imágenes y enlaces adicionales según lo necesites.
 
