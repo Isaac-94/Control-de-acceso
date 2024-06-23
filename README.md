@@ -114,5 +114,17 @@ Autor
 Creado por @Isaac-94
 
 
+### Explicación de las Secciones
 
+1. **Descripción**: Ofrece un resumen del propósito del proyecto.
+2. **Características**: Detalla las funcionalidades principales del sistema.
+3. **Hardware Necesario**: Lista los componentes de hardware que se requieren.
+4. **Configuración del Proyecto**: Instrucciones paso a paso para clonar, configurar, y flashear el proyecto en el ESP32.
+5. **Uso del Sistema**: Guía sobre cómo operar el sistema, incluyendo el ingreso de códigos y la autenticación RFID.
+6. **Notas Técnicas**: Información adicional sobre el funcionamiento del sistema.
+7. **Licencia**: Información sobre la licencia.
+8. **Autor**: Detalles sobre el creador del proyecto.
+9. **Imágenes**: Sección para agregar imágenes que describan el hardware y conexiones del proyecto.
+
+Este README proporciona una guía completa para usuarios nuevos y ayuda a explicar cómo configurar y usar el sistema. Puedes agregar imágenes y enlaces adicionales según lo necesites.
 
