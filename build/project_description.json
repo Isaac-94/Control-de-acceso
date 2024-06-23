@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "mqtt-tcp",
-    "project_version":    "573b065-dirty",
+    "project_version":    "3bdad92-dirty",
     "project_path":       "C:/Users/Isaac/Documents/prog/IoT_sitemas_embebidos/2024/Programacion_de_SE/mqtt-tcp",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.1.2",
     "build_dir":          "C:/Users/Isaac/Documents/prog/IoT_sitemas_embebidos/2024/Programacion_de_SE/mqtt-tcp/build",

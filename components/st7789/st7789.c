@@ -11,6 +11,8 @@
 
 #include "st7789.h"
 
+#include "fontx.h"  
+
 #define TAG "ST7789"
 #define	_DEBUG_ 0
 
@@ -25,6 +27,7 @@
 #define LCD_HOST SPI2_HOST
 #endif
 #endif
+
 
 #define HOST_ID SPI2_HOST //Definicion sin menuconfig
 /*
@@ -736,6 +739,55 @@ void lcdDrawFillArrow(TFT_t * dev, uint16_t x0,uint16_t y0,uint16_t x1,uint16_t 
 	}
 }
 
+/**
+ * @brief Dibuja un carácter ASCII en la pantalla.
+ * 
+ * @param dev Estructura del dispositivo TFT
+ * @param x Coordenada X
+ * @param y Coordenada Y
+ * @param c Carácter ASCII a dibujar
+ * @param font Estructura de la fuente
+ * @param color Color del carácter
+ */
+void LCD_DrawChar(TFT_t *dev, uint16_t x, uint16_t y, char c, FontDef *font, uint16_t color) {
+    uint32_t i, j;
+    uint8_t byte;
+    uint32_t offset = (c - ' ') * font->height * ((font->width + 7) / 8);
+
+    for (i = 0; i < font->height; i++) {
+        for (j = 0; j < font->width; j++) {
+            byte = font->table[offset + i * ((font->width + 7) / 8) + (j / 8)];
+            if (byte & (0x80 >> (j % 8))) {
+                lcdDrawPixel(dev, x + j, y + i, color);
+            }
+        }
+    }
+}
+
+/**
+ * @brief Dibuja una cadena de texto en la pantalla.
+ * 
+ * @param dev Estructura del dispositivo TFT
+ * @param x Coordenada X
+ * @param y Coordenada Y
+ * @param str Cadena de texto a dibujar
+ * @param font Estructura de la fuente
+ * @param color Color del texto
+ */
+void LCD_DrawString(TFT_t *dev, uint16_t x, uint16_t y, const char *str, FontDef *font, uint16_t color) {
+    while (*str) {
+        if (x + font->width > 240) {
+            x = 0;
+            y += font->height;
+            if (y + font->height > 240) {
+                break;
+            }
+        }
+        LCD_DrawChar(dev, x, y, *str, font, color);
+        x += font->width;
+        str++;
+    }
+}
 
 /* funciones originales
 

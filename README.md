@@ -32,15 +32,26 @@ Este proyecto está diseñado para gestionar el acceso a un cofre de seguridad o
 - **Servo**: Controla la apertura y cierre del cofre/puerta mediante un servomotor.
 - **Pantalla LCD**: Muestra mensajes e información del estado.
 - **Modo Seguro**: Cierra automáticamente el cofre después de 15 segundos de apertura.
+- **Base de datos**: Se usa MongoDB para el almacenamiento de los usuarios del acceso (Información de configuración en repositorio de backend).
+- **Servidor Backend**: Para la gestion de las comunicaciones con el broKer Mqtt y la Base de datos.
+[Repositorio Backend](url completa)
+- **Frontend**: Interfaz de usuario para la gestion de permisos de accesos a tarjetas y codigos.(Información de configuración en repositorio de backend).
 
 ## Hardware Necesario
 
 - **ESP32**: Microcontrolador central del sistema.
+![pinout esp32](imagenes/pinout-ESP32.png)
 - **Teclado Matricial (4x4)**: Para la entrada de códigos.
+![pinout teclado matricial 4x4](imagenes/pinoutkeyboard.png)
 - **Lector de Tarjetas RC522**: Para la autenticación RFID.
+![pinout rc522](imagenes/pinoutrc522.png)
 - **Servomotor**: Controla la apertura y cierre del cofre.
+![pinout SERVO](imagenes/pinoutservo.png)
 - **Pantalla LCD (ST7789)**: Muestra mensajes y estado.
-- **Servidor MQTT**: Para la comunicación y gestión de comandos.
+![pinout lcd](imagenes/pinoutlcd.png)
+
+- **Esquema de conexión**: A modo ilustrativo se muestra este esquema. La posición de los pines puede variar segun el fabricante del pcb.
+![pinout proyecto](imagenes/esp32sensors.png)
 
 ## Configuración del Proyecto
 
@@ -54,9 +65,11 @@ cd Control-de-acceso
 2. Configurar el Entorno de Desarrollo
 Sigue la guía oficial de ESP-IDF para configurar el entorno de desarrollo.
 
-3. Configurar MQTT
-Edita sdkconfig para configurar la URL de tu broker MQTT:
+3. Configurar WIFI y MQTT 
+Edita sdkconfig para configurar tu red WIFI y la URL de tu broker MQTT:
 ```bash
+CONFIG_EXAMPLE_WIFI_SSID="YOURWIFINAME"
+CONFIG_EXAMPLE_WIFI_PASSWORD="YOURWIFIPASSWORD"
 CONFIG_BROKER_URL="mqtt://broker.url"
 ```
 4. Configurar Pines
@@ -65,13 +78,15 @@ Ajusta los pines en tu código según tu hardware:
 Teclado Matricial: GPIO 0, 4, 12, 13, 15, 21, 32, 33
 Servo: GPIO 2
 RC522: GPIO 18 (MISO), 19 (SCK), 22 (SDA), 23 (MOSI)
-LCD: GPIOs configurados en spi_master_init.
+LCD: GPIO 14 (MOSI), 25(RST), 26(DC), 27 (SCK).
+
 5. Compilar y Flashear
 bash
 Copiar código
 idf.py build
 idf.py -p [puerto_serial] flash
 Uso del Sistema
+
 1. Inicio del Sistema
 Enciende el ESP32. Este debería conectarse a la red Wi-Fi configurada y al servidor MQTT. La pantalla LCD mostrará un mensaje de inicio.
 
@@ -83,31 +98,21 @@ Presiona * para cancelar y reiniciar el ingreso del código.
 Presenta una tarjeta al lector RC522.
 El sistema autentica la tarjeta y responde con un mensaje en la LCD.
 4. Apertura y Cierre del Cofre/Puerta
-Código 111: Abre el cofre/puerta moviendo el servo a 0 grados.
-Código 101: Abre el cofre a 170 grados y, después de 15 segundos, lo cierra moviendo el servo de vuelta a 0 grados.
-Código 100: Abre el cofre moviendo el servo a 170 grados.
+Código 111: Se usa para activar una salida de relé (no definida en el codigo).
+Código 101: Abre el cofre a 60 grados y, después de 15 segundos, lo cierra moviendo el servo de vuelta a 0 grados.
+Código 100: Acceso denegado.
 Notas Técnicas
 Tiempo de Espera del Código: Si el código no se completa en 15 segundos, se limpia el buffer.
-Servo: El servo se mueve a 0 grados para abrir y a 170 grados para cerrar.
-Mensajes MQTT: El sistema publica y suscribe mensajes en los temas /cntrlaxs/solicitud y /cntrlaxs/respuesta.
-Licencia
+Servo: El servo se mueve a 0 grados para abrir y a 60 grados para cerrar.
+Mensajes MQTT: El sistema publica  mensajes en los temas /cntrlaxs/solicitud, /cntrlaxs/solicitud/card, /cntrlaxs/solicitud/code y suscribe /cntrlaxs/respuesta/{id_de_dispositivo}
+En este tópico se publica el mensaje con el id del dipositivo una vez que se conecta /cntrlaxs/solicitud/
+En este tópico se publica el mensaje con el codigo ingresado por teclado /cntrlaxs/solicitud/code
+En este tópico se publica el mensaje con el codigo leido por el lector de tarjetas RC522 /cntrlaxs/solicitud/code
 Este proyecto está licenciado bajo la MIT License.
 
 Autor
 Creado por @Isaac-94
 
 
-### Explicación de las Secciones
 
-1. **Descripción**: Ofrece un resumen del propósito del proyecto.
-2. **Características**: Detalla las funcionalidades principales del sistema.
-3. **Hardware Necesario**: Lista los componentes de hardware que se requieren.
-4. **Configuración del Proyecto**: Instrucciones paso a paso para clonar, configurar, y flashear el proyecto en el ESP32.
-5. **Uso del Sistema**: Guía sobre cómo operar el sistema, incluyendo el ingreso de códigos y la autenticación RFID.
-6. **Notas Técnicas**: Información adicional sobre el funcionamiento del sistema.
-7. **Licencia**: Información sobre la licencia.
-8. **Autor**: Detalles sobre el creador del proyecto.
-9. **Imágenes**: Sección para agregar imágenes que describan el hardware y conexiones del proyecto.
-
-Este README proporciona una guía completa para usuarios nuevos y ayuda a explicar cómo configurar y usar el sistema. Puedes agregar imágenes y enlaces adicionales según lo necesites.
 
