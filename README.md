@@ -62,17 +62,17 @@ git clone https://github.com/Isaac-94/Control-de-acceso.git
 cd Control-de-acceso
 ```
 
-2. Configurar el Entorno de Desarrollo
+### 2. Configurar el Entorno de Desarrollo
 Sigue la guía oficial de ESP-IDF para configurar el entorno de desarrollo.
 
-3. Configurar WIFI y MQTT 
+### 3. Configurar WIFI y MQTT 
 Edita sdkconfig para configurar tu red WIFI y la URL de tu broker MQTT:
 ```bash
 CONFIG_EXAMPLE_WIFI_SSID="YOURWIFINAME"
 CONFIG_EXAMPLE_WIFI_PASSWORD="YOURWIFIPASSWORD"
 CONFIG_BROKER_URL="mqtt://broker.url"
 ```
-4. Configurar Pines
+### 4. Configurar Pines
 Ajusta los pines en tu código según tu hardware:
 
 Teclado Matricial: GPIO 0, 4, 12, 13, 15, 21, 32, 33
@@ -80,35 +80,39 @@ Servo: GPIO 2
 RC522: GPIO 18 (MISO), 19 (SCK), 22 (SDA), 23 (MOSI)
 LCD: GPIO 14 (MOSI), 25(RST), 26(DC), 27 (SCK).
 
-5. Compilar y Flashear
+### 5. Compilar y Flashear
 bash
 Copiar código
 idf.py build
 idf.py -p [puerto_serial] flash
-Uso del Sistema
 
-1. Inicio del Sistema
+## Uso del Sistema
+
+### 1. Inicio del Sistema
 Enciende el ESP32. Este debería conectarse a la red Wi-Fi configurada y al servidor MQTT. La pantalla LCD mostrará un mensaje de inicio.
 
-2. Ingreso de Código
+### 2. Ingreso de Código
 Usa el teclado para ingresar un código numérico de 6 dígitos.
 Presiona # para enviar el código.
 Presiona * para cancelar y reiniciar el ingreso del código.
-3. Uso de Tarjeta RFID
+### 3. Uso de Tarjeta RFID
 Presenta una tarjeta al lector RC522.
 El sistema autentica la tarjeta y responde con un mensaje en la LCD.
-4. Apertura y Cierre del Cofre/Puerta
+### 4. Apertura y Cierre del Cofre/Puerta
+El backend devuelve las siguientes respuestas:
 Código 111: Se usa para activar una salida de relé (no definida en el codigo).
 Código 101: Abre el cofre a 60 grados y, después de 15 segundos, lo cierra moviendo el servo de vuelta a 0 grados.
 Código 100: Acceso denegado.
-Notas Técnicas
+### Notas Técnicas
 Tiempo de Espera del Código: Si el código no se completa en 15 segundos, se limpia el buffer.
-Servo: El servo se mueve a 0 grados para abrir y a 60 grados para cerrar.
-Mensajes MQTT: El sistema publica  mensajes en los temas /cntrlaxs/solicitud, /cntrlaxs/solicitud/card, /cntrlaxs/solicitud/code y suscribe /cntrlaxs/respuesta/{id_de_dispositivo}
-En este tópico se publica el mensaje con el id del dipositivo una vez que se conecta /cntrlaxs/solicitud/
-En este tópico se publica el mensaje con el codigo ingresado por teclado /cntrlaxs/solicitud/code
-En este tópico se publica el mensaje con el codigo leido por el lector de tarjetas RC522 /cntrlaxs/solicitud/code
-Este proyecto está licenciado bajo la MIT License.
+- Servo: El servo se mueve a 0 grados para abrir y a 60 grados para cerrar.
+- Mensajes MQTT: El sistema publica  mensajes en los temas **/cntrlaxs/solicitud**, **/cntrlaxs/solicitud/card**, **/cntrlaxs/solicitud/code** y suscribe **/cntrlaxs/respuesta/{id_de_dispositivo}**.
+- En este tópico se publica el mensaje con el id del dipositivo una vez que se conecta **/cntrlaxs/solicitud/**
+- En este tópico se publica el mensaje con el codigo ingresado por teclado **/cntrlaxs/solicitud/code**
+- En este tópico se publica el mensaje con el codigo leido por el lector de tarjetas RC522 **/cntrlaxs/solicitud/code**
+- Este tópico se crea en el backend con el ID del dispositivo, con el objetivo de responder a un único dispositivo **/cntrlaxs/respuesta/{id_de_dispositivo}**.
+
+## Este proyecto está licenciado bajo la MIT License.
 
 Autor
 Creado por @Isaac-94
