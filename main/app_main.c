@@ -90,7 +90,7 @@ void move_servo(uint32_t start_angle, uint32_t end_angle, uint32_t speed)
     mcpwm_set_duty_in_us(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, duty_us);
 
     // Detener la señal PWM después de alcanzar la posición deseada
-    mcpwm_set_signal_low(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A);
+    //mcpwm_set_signal_low(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A);
 }
 
 //------------------------------------------funciones para controlar acceso-------------------------------
@@ -125,9 +125,9 @@ void access_handler(const char *response, int length)
         lcdFillScreen(&dev, BLUE);
         LCD_DrawString(&dev, 80, 80, "COFRE", &Font24, RED);
         LCD_DrawString(&dev, 60, 120, "ABIERTO", &Font24, RED);
-        move_servo(60, 0, 40);            // Mover el servo de 60 grados a 0
+        move_servo(60, 10, 40);            // Mover el servo de 60 grados a 0
         vTaskDelay(pdMS_TO_TICKS(15000)); // Esperar 15 segundos
-        move_servo(0, 60, 40);            // Mover el servo de regreso a 60 grados
+        move_servo(10, 60, 40);            // Mover el servo de regreso a 60 grados
         lcdFillScreen(&dev, ORANGE);
         LCD_DrawString(&dev, 30, 100, "Bienvenido!", &Font24, RED);
         break;
@@ -338,7 +338,6 @@ void app_main(void)
 
     //----------------------------LCD--------------------------
     // Define the GPIOs for your SPI interface
-            LCD IPS130
     int16_t GPIO_MOSI = 14;
     int16_t GPIO_SCLK = 27;
     int16_t GPIO_CS = -1;

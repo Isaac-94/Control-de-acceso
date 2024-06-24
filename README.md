@@ -34,7 +34,7 @@ Este proyecto está diseñado para gestionar el acceso a un cofre de seguridad o
 - **Modo Seguro**: Cierra automáticamente el cofre después de 15 segundos de apertura.
 - **Base de datos**: Se usa MongoDB para el almacenamiento de los usuarios del acceso (Información de configuración en repositorio de backend).
 - **Servidor Backend**: Para la gestion de las comunicaciones con el broKer Mqtt y la Base de datos.
-[Repositorio Backend](url completa)
+[Repositorio Backend](https://github.com/Isaac-94/Web-Control-de-accesos)
 - **Frontend**: Interfaz de usuario para la gestion de permisos de accesos a tarjetas y codigos.(Información de configuración en repositorio de backend).
 
 ## Hardware Necesario
@@ -81,11 +81,14 @@ RC522: GPIO 18 (MISO), 19 (SCK), 22 (SDA), 23 (MOSI)
 LCD: GPIO 14 (MOSI), 25(RST), 26(DC), 27 (SCK).
 
 ### 5. Compilar y Flashear
-bash
-Copiar código
+Compila
+```bash
 idf.py build
+```
+Flash
+```bash
 idf.py -p [puerto_serial] flash
-
+```
 ## Uso del Sistema
 
 ### 1. Inicio del Sistema
