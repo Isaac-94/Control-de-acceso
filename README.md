@@ -49,9 +49,13 @@ Este proyecto está diseñado para gestionar el acceso a un cofre de seguridad o
 ![pinout SERVO](imagenes/pinoutservo.png)
 - **Pantalla LCD (ST7789)**: Muestra mensajes y estado.
 ![pinout lcd](imagenes/pinoutlcd.png)
-
 - **Esquema de conexión**: A modo ilustrativo se muestra este esquema. La posición de los pines puede variar segun el fabricante del pcb.
 ![pinout proyecto](imagenes/esp32sensors.png)
+
+## Esquema de comunicacion
+- Comunicación entre ESP32, Mqtt, Node.js y MongoDB
+![Diagrama](imagenes/Diagrama.png)
+
 
 ## Configuración del Proyecto
 
