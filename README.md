@@ -110,6 +110,8 @@ El backend devuelve las siguientes respuestas:
 Código 111: Se usa para activar una salida de relé (no definida en el codigo).
 Código 101: Abre el cofre a 60 grados y, después de 15 segundos, lo cierra moviendo el servo de vuelta a 0 grados.
 Código 100: Acceso denegado.
+### Documentación generada por Doxygen
+- [Doxygen](https://magnificent-raindrop-5e9a9c.netlify.app/)
 ### Notas Técnicas
 Tiempo de Espera del Código: Si el código no se completa en 15 segundos, se limpia el buffer.
 - Servo: El servo se mueve a 0 grados para abrir y a 60 grados para cerrar.
