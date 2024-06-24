@@ -18,6 +18,7 @@ Este proyecto implementa un sistema de control de acceso basado en el ESP32, per
   - [Ingreso de Código](#2-ingreso-de-código)
   - [Uso de Tarjeta RFID](#3-uso-de-tarjeta-rfid)
   - [Apertura y Cierre del Cofre/Puerta](#4-apertura-y-cierre-del-cofrepuerta)
+ - [Documentación](#Documentación-generada-por-Doxygen)
 - [Notas Técnicas](#notas-técnicas)
 - [Licencia](#licencia)
 
@@ -120,6 +121,12 @@ Tiempo de Espera del Código: Si el código no se completa en 15 segundos, se li
 - En este tópico se publica el mensaje con el codigo ingresado por teclado **/cntrlaxs/solicitud/code**
 - En este tópico se publica el mensaje con el codigo leido por el lector de tarjetas RC522 **/cntrlaxs/solicitud/code**
 - Este tópico se crea en el backend con el ID del dispositivo, con el objetivo de responder a un único dispositivo **/cntrlaxs/respuesta/{id_de_dispositivo}**.
+
+## Repositorios y librerias usados:
+ - [RC522 card reader](https://github.com/abobija/esp-idf-rc522) 
+ - [LCD IPS130](https://github.com/nopnop2002/esp-idf-st7789/)
+ - [Teclado 4x4](https://github.com/microdevg/keyboard)
+
 
 ## Este proyecto está licenciado bajo la MIT License.
 
