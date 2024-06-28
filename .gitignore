@@ -1,4 +1,5 @@
 .devcontainer/
 .metadata/
 .vscode/
+.build/
 doxygen/
